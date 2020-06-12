@@ -2,15 +2,28 @@
   <div class="topbar">
     <button class="languagebtn ripple">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path fill="white" d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" />
-</svg>
+        <path
+          fill="white"
+          d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z"
+        />
+      </svg>
     </button>
     <button class="themebtn ripple">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path fill="white" d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z" />
-</svg>
+        <path
+          fill="white"
+          d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z"
+        />
+      </svg>
     </button>
     <p>{{$t("title")}}</p>
+    <div class="langmenu">
+      <ul>
+        <li v-for="(lang,index) in langs" :key="index">
+          {{lang.title}}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -57,6 +70,7 @@ export default {
   background: linear-gradient(200.6deg, #244dff8a 19.14%, #0e9dfc6c 154.68%);
   background-blend-mode: normal, luminosity;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 3px 6px 20px rgba(104, 102, 255, 0.44),
     -3px -6px 10px rgba(255, 255, 255, 0.6);
   outline: rgba(104, 102, 255, 1);
@@ -84,29 +98,36 @@ export default {
   position: absolute;
   width: 55px;
   height: 55px;
-  top: 30px;
+  bottom: -25px;
   right: 5px;
-  bottom: 0;
   border: 0pt;
   outline: none;
   border-radius: 999px;
   display: inline-block;
   background: rgba(255, 255, 255, 0);
   transform: translateY(-50%);
-  
 }
-.themebtn{
-    position: absolute;
-    width: 55px;
+.themebtn {
+  position: absolute;
+  width: 55px;
   height: 55px;
-  top: 30px;
+  bottom: -25px;
   right: 45px;
-  bottom: 0;
   border: 0pt;
   outline: none;
   border-radius: 999px;
   display: inline-block;
   background: rgba(255, 255, 255, 0);
   transform: translateY(-50%);
+}
+.langmenu{
+  position: fixed;
+  right: 10px;
+  top:40px;
+  background: linear-gradient(0deg, rgba(234, 241, 249, 0.1), rgba(234, 241, 249, 0.1));
+background-blend-mode: normal, luminosity;
+backdrop-filter: blur(56px);
+-webkit-backdrop-filter: blur(56px);
+border-radius: 24px;
 }
 </style>

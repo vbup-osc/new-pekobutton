@@ -62,6 +62,13 @@ export default {
     ],
     //
   }),
+  created(){
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {//不会还有人在用IE吧，不会吧不会吧
+      window.console.log("IE警察出动！");
+        alert("给我滚去下Chrome啊kora！");
+        this.See("https://www.google.cn/intl/zh-CN/chrome/");
+    }
+  },
   mounted(){
     let timeNow = new Date();
     let hours = timeNow.getHours();
@@ -141,6 +148,7 @@ export default {
   background: linear-gradient(200.6deg, #244dff8a 19.14%, #0e9dfc6c 154.68%);
   background-blend-mode: normal, luminosity;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 3px 6px 20px rgba(104, 102, 255, 0.44);
   z-index: 9;
 }

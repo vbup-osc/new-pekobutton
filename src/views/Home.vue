@@ -23,7 +23,8 @@
         <p class="cardtext">{{$t("info")}}
         </p>
       </div>
-    </div> -->
+    </div>
+    <hr color="#EEE" width="95%" /> -->
     <div class="topdiv">
       <div class="card" v-for="(group,index) in voices" :key="index">
         <p class="cardtext" v-if="$i18n.locale=='zhHans'">{{group.translation.Chinese}}</p>
@@ -174,6 +175,7 @@ body {
   width: 100%;
 }
 .cardtext {
+  overflow: visible;
   font-family: Helvetica;
   font-weight: bold;
   color: #31456A;
@@ -284,10 +286,14 @@ body {
     -18px -12px 40px rgba(255, 255, 255, 0.6);
     transform: translate(-5px,-5px);
   }
+  .topdiv {
+    padding: 50px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1300px) {
   .topdiv {
     column-count: 3;
+    padding: 50px;
   }
   .card:hover{
     box-shadow: 18px 12px 80px rgba(136, 165, 191, 0.36),
