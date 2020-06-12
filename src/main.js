@@ -21,5 +21,10 @@ new Vue({
     router,
     store,
     i18n,
+    data: function() {
+        return {
+            dark: false,
+        }
+    },
     render: h => h(App)
 }).$mount('#app')

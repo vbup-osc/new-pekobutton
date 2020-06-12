@@ -73,9 +73,12 @@ export default {
     let timeNow = new Date();
     let hours = timeNow.getHours();
     if (hours<6||hours>18){//自动触发夜间模式
+      this.$store.commit("change_dark_mode");
+      this.$root.dark=this.$store.state.dark_mode;
       
-      window.console.log("success")
+      window.console.log(this.$root.dark)
     }
+    
     window.onbeforeinstallprompt = (e) => {     //当浏览器触发横幅显示事件
                 window.console.log(e);
                 this.prompt = true;
@@ -85,12 +88,10 @@ export default {
             }
     window.addEventListener("scroll", this.handleScroll, true);
     this.$i18n.locale="zhHans";
-    // if (this.$cookies.isKey("Lang")){
-    //   this.$i18n.locale=this.$cookies.get("Lang");
+    if (this.$cookies.isKey("Lang")){
+      this.$i18n.locale=this.$cookies.get("Lang");
     
-    // }else{
-      
-    // }
+    }
   },
   methods: {
     showAddToHomeScreen(){
@@ -184,7 +185,6 @@ export default {
   transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .fab-scale-enter ,.fab-scale-leave-to{
-  transform: scale(0,0);
-  transform: rotateX(45);
+  transform: rotateY(90deg);
 }
 </style>

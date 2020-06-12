@@ -1,7 +1,7 @@
 <template>
   <div class="overflowC">
     <div class="titlediv">
-      <p class="title">{{$t("title")}}</p>
+      <p class="title" :class="{dark_text:$root.dark}" >{{$t("title")}}</p>
     </div>
     <!-- <div class="topdiv">
       <div class="card">
@@ -26,12 +26,14 @@
     </div>
     <hr color="#EEE" width="95%" /> -->
     <div class="topdiv">
-      <div class="card" v-for="(group,index) in voices" :key="index">
-        <p class="cardtext" v-if="$i18n.locale=='zhHans'">{{group.translation.Chinese}}</p>
-        <p class="cardtext" v-else-if="$i18n.locale=='ja'">{{group.translation.Japanese}}</p>
+      <div class="card" :class="{dark:$root.dark}" v-for="(group,index) in voices" :key="index">
+        <p class="cardtext" :class="{dark_text:$root.dark}" v-if="$i18n.locale=='zhHans'">{{group.translation.Chinese}}</p>
+        <p class="cardtext" :class="{dark_text:$root.dark}" v-else-if="$i18n.locale=='ja'">{{group.translation.Japanese}}</p>
+        <p class="cardtext" :class="{dark_text:$root.dark}" v-else-if="$i18n.locale=='en'">{{group.translation.English}}</p>
         <div v-if="$i18n.locale=='zhHans'">
           <button
             class="btn ripple"
+            :class="{dark_btn:$root.dark}"
             v-for="(voice,index1) in group.voicelist"
             :key="index1"
             @click="play(voice)"
@@ -40,10 +42,20 @@
         <div v-else-if="$i18n.locale=='ja'">
           <button
             class="btn ripple"
+            :class="{dark_btn:$root.dark}"
             v-for="(voice,index2) in group.voicelist"
             :key="index2"
             @click="play(voice)"
           ><div>{{voice.translation.Japanese}}</div></button>
+        </div>
+        <div v-else-if="$i18n.locale=='en'">
+          <button
+            class="btn ripple"
+            :class="{dark_btn:$root.dark}"
+            v-for="(voice,index2) in group.voicelist"
+            :key="index2"
+            @click="play(voice)"
+          ><div>{{voice.translation.English}}</div></button>
         </div>
       </div>
     </div>
@@ -153,6 +165,10 @@ export default {
 body {
   background: linear-gradient(200.6deg, #ffffff 19.14%, #e9e9e9 154.68%);
 }
+.dark{
+  background: linear-gradient(157.73deg, #262B2F -0.68%, #16191D 74.03%) !important;
+  box-shadow: -12px -20px 56px rgba(232, 237, 243, 0.05), 36px 12px 64px rgba(2, 3, 3, 0.7), inset -16px -6px 80px rgba(248, 249, 249, 0.03) !important;
+}
 .card {
   padding: 20px;
   margin:15px;
@@ -182,6 +198,9 @@ body {
   font-size: 24px;
   letter-spacing: 0.02em;
 }
+.dark_text{
+  color:rgb(255, 255, 255) !important;
+}
 .btn {
   position: relative;
   border-radius: 16px;
@@ -198,6 +217,9 @@ body {
   background: linear-gradient(83.54deg, #ff9b53 -7.64%, #e6660a 145.94%);
   box-shadow: 2px 3px 5px rgba(244, 102, 0, 0.42), -2px -2px 5px rgba(255, 255, 255, 0.6);
   transition: 0.5s;
+}
+.dark_btn{
+  box-shadow: 2px 3px 5px rgba(244, 102, 0, 0.42), -2px -2px 5px rgba(0, 0, 0, 0.6) !important;
 }
 .btn div{
   transition: 0.5s;
