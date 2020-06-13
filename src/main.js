@@ -8,7 +8,11 @@ import './registerServiceWorker'
 import VueCookies from 'vue-cookies'
 import '@mdi/font/css/materialdesignicons.css'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 Vue.use(VueCookies)
+Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 router.beforeEach((to, from, next) => {
     /* 路由发生变化修改页面title */

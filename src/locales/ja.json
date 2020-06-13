@@ -16,7 +16,7 @@
     "developerinfo": "このウェブサイトは愛好家によって設定されています、ホロライブプロダクションとは何の関係もない",
     "repeatmode": "止まらないで（ループプレイ）",
     "betainfo": "こんにちは、このウェブサイトはついに日本語をサポートしました　私の日本語は苦手ぺこ　間違いを見つけた場合は、Githubでお知らせください ありがとうございました",
-    "info": "兎田ぺこら30万人のYouTubeチャンネル登録者におめでとう",
+    "info": "更新资料",
     "developer": "開発者：Coceki",
     "credits": "特別な感謝：野兔子同好会 Richard_Al 昭和歌姬夏半首",
     "translationCredits": "",
@@ -35,5 +35,8 @@
     "dontneed": "必要ない",
     "addtohomescreeninfo": "このウェブサイトはPWAをサポートしています。オフラインでもホーム画面に追加すると、通常のアプリとしてアクセスできます",
     "friendlinks": "リンク集",
-    "newversion": "A brand new version is on the way"
+    "newversion": "A brand new version is on the way",
+    "youtubesubs": "YouTube Channel",
+    "upcoming": "開始しようとしています",
+    "streaming": "生放送"
 }

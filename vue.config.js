@@ -19,4 +19,16 @@ module.exports = {
         },
         themeColor: '#728bf3'
     },
+    devServer: {
+        open: true,
+        proxy: {
+            '/api': {
+                target: 'https://peko.top',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': '/'
+                }
+            }
+        }
+    },
 }
