@@ -59,7 +59,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
 .topbar {
   position: fixed;
   align-items: flex-start;

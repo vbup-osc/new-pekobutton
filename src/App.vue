@@ -7,7 +7,18 @@
     </transition>
     <Topbar></Topbar>
     <router-view></router-view>
+    <hr class="line" v-if="$root.dark" color="#333" width="95%" />
+    <hr class="line" v-else color="#EEE" width="95%" />
+    <div style="padding:10px;margin-bottom:10px;">
+      <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("developer")}}</p>
+      <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("credits")}}</p>
+      <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("translationCredits")}}</p>
+      <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("friendlinks")}}</p>
+      <s-btn v-for="(link,index) in links" :key="index" :color="link.color" @click="See(link.href)">{{link.name}}</s-btn>
+      <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("developerinfo")}}</p>
+    </div>
   </div>
+  
 </template>
 <script>
 import Topbar from "./components/Topbar.vue"
@@ -27,22 +38,22 @@ export default {
       {
         name:"VTuber按钮合集",
         href:"https://vtbbtn.org/",
-        color:"orange lighten-1"
+        color:"primary"
       },
       {
         name:"夸按钮/あくあボタン",
         href:"https://aquaminato.moe/",
-        color:"purple lighten-2"
+        color:"purple"
       },
       {
         name:"狐按钮/フブキボタン",
         href:"https://sfubuki.moe/",
-        color:"blue lighten-2"
+        color:"blue"
       },
       {
         name:"祭按钮/まつりボタン",
         href:"https://natsuiromatsuri.moe/",
-        color:"orange darken-1"
+        color:"secondary"
       },
       {
         name:"狼按钮/ミオボタン",
@@ -52,12 +63,12 @@ export default {
       {
         name:"余按钮/なきりあやめボタン",
         href:"https://nakiriayame.moe/",
-        color:"red darken-1"
+        color:"red"
       },
       {
         name:"狗按钮/ころねボタン",
         href:"https://korone.icu/",
-        color:"brown darken-1"
+        color:"brown"
       },
     ],
     //
@@ -137,6 +148,13 @@ export default {
 </script>
 
 <style>
+.footertext {
+  margin: 10px;
+  font-family: Helvetica;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: #4646468a;
+}
 .fabbtn{
   padding: 10px;
   position: fixed;

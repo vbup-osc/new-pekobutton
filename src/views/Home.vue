@@ -1,46 +1,142 @@
 <template>
   <div class="overflowC">
-    <transition name="fab-scale">
-    <button v-show="arrysize!=0&&orderplaymode" class="fabbtn" style="bottom:140px !important;width:10px !important;height:10px !important;background:orange!important;z-index:12;padding:10px"><div style="color:white;transform:translateY(-50%) translateX(-5px)">{{arrysize}}</div></button>
-    </transition>
-    <transition name="fab-scale">
-    <button v-show="orderplaymode" @click="orderdialog=true" class="fabbtn" style="bottom:100px !important;padding=20px !important"><svg style="width:36px;height:36px" viewBox="0 0 24 24">
-    <path fill="white" d="M15,6H3V8H15V6M15,10H3V12H15V10M3,16H11V14H3V16M17,6V14.18C16.69,14.07 16.35,14 16,14A3,3 0 0,0 13,17A3,3 0 0,0 16,20A3,3 0 0,0 19,17V8H22V6H17Z" />
-    </svg></button>
+    <transition name="dialog_scale">
+      <div v-show="orderdialog" class="orderdialog langmenu" :class="{dark:$root.dark}">
+        <button class="closebtn ripple" @click="orderdialog = false,stopplay()">
+              <svg style="width:30px;height:30px" viewBox="0 0 24 24">
+                <path
+                  fill="red"
+                  d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"
+                />
+              </svg>
+            </button>
+        <p class="cardtext" :class="{dark_text:$root.dark}">{{$t("orderplaymode")}}</p>
+        <div v-if="$i18n.locale=='zhHans'">
+          <div  v-for="(voice,index11) in orderlist"
+            :key="index11"> 
+          <s-btn
+           
+            color="secondary"
+            @click="playOnly(voice)"
+          >
+            {{voice.translation.Chinese}}
+            
+          </s-btn>
+          <button class="deletebtn ripple" @click="deletelist(index)">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div v-if="$i18n.locale=='ja'">
+          <div  v-for="(voice,index11) in orderlist"
+            :key="index11"> 
+          <s-btn
+           
+            color="secondary"
+            @click="playOnly(voice)"
+          >
+            {{voice.translation.Japanese}}
+            
+          </s-btn>
+          <button class="deletebtn ripple" @click="deletelist(index)">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div v-if="$i18n.locale=='en'">
+          <div  v-for="(voice,index11) in orderlist"
+            :key="index11"> 
+          <s-btn
+           
+            color="secondary"
+            @click="playOnly(voice)"
+          >
+            {{voice.translation.English}}
+            
+          </s-btn>
+          <button class="deletebtn ripple" @click="deletelist(index)">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <hr class="line" v-if="$root.dark" color="#333" width="95%" />
+    <hr class="line" v-else color="#EEE" width="95%" />
+        
+          <p class="cardtext" style="font-size:15px !important;transform:translate3d(-40%,0,0);overflow: visible !important;width:150%" :class="{dark_text:$root.dark}">
+        <label for="toggle1">
+          <input type="checkbox" id="toggle1" v-model="repeatmode" />
+          <span></span>
+        </label>
+        {{$t("repeatmode")}}
+      </p>
+          <p>
+          <s-btn color="primary" @click="orderplay">{{$t("playthislist")}}</s-btn>
+          <s-btn color="secondary" @click="stopplay">{{$t("stopplay")}}</s-btn>
+          <s-btn text color="red" @click="resetorder">{{$t("resetorder")}}</s-btn>
+          </p>
+      </div>
     </transition>
     <transition name="dialog_scale">
-    <div v-show="helpdialog" class="dialog_back"></div>
+      <div v-show="orderdialog" class="dialog_back"></div>
+    </transition>
+    <transition name="fab-scale">
+      <button
+        v-show="arrysize!=0&&orderplaymode"
+        class="fabbtn"
+        style="bottom:140px !important;width:10px !important;height:10px !important;background:orange!important;z-index:12;padding:10px"
+      >
+        <div style="color:white;transform:translateY(-50%) translateX(-5px)">{{arrysize}}</div>
+      </button>
+    </transition>
+    <transition name="fab-scale">
+      <button
+        v-show="orderplaymode"
+        @click="orderdialog=true"
+        class="fabbtn"
+        style="bottom:100px !important;padding=20px !important"
+      >
+        <svg style="width:36px;height:36px" viewBox="0 0 24 24">
+          <path
+            fill="white"
+            d="M15,6H3V8H15V6M15,10H3V12H15V10M3,16H11V14H3V16M17,6V14.18C16.69,14.07 16.35,14 16,14A3,3 0 0,0 13,17A3,3 0 0,0 16,20A3,3 0 0,0 19,17V8H22V6H17Z"
+          />
+        </svg>
+      </button>
     </transition>
     <transition name="dialog_scale">
-    <div v-show="helpdialog" class="helpdialog langmenu" :class="{dark:$root.dark}" >
-       <p class="cardtext" :class="{dark_text:$root.dark}">{{$t("orderplaymodehelp")}}</p>
-       <p class="infotext" :class="{dark_infotext:$root.dark}">
-         {{$t("tips1")}}
-       </p>
-       <img src="1.png" width=300/>
-       <p class="infotext" :class="{dark_infotext:$root.dark}">
-         {{$t("tips2")}}
-       </p>
-       <img src="2.png" width=300/>
-       <p class="infotext" :class="{dark_infotext:$root.dark}">
-         {{$t("tips3")}}
-       </p>
-       <img src="3.png" width=300/>
-       <p>
-       <button class="btn ripple" :class="{dark_btn:$root.dark}" @click="helpdialog=false">{{$t("gotit")}}</button>
-       </p>
-    </div>
+      <div v-show="helpdialog" class="dialog_back"></div>
+    </transition>
+    <transition name="dialog_scale">
+      <div v-show="helpdialog" class="helpdialog langmenu" :class="{dark:$root.dark}">
+        <p class="cardtext" :class="{dark_text:$root.dark}">{{$t("orderplaymodehelp")}}</p>
+        <p class="infotext" :class="{dark_infotext:$root.dark}">{{$t("tips1")}}</p>
+        <img src="1.png" width="300" />
+        <p class="infotext" :class="{dark_infotext:$root.dark}">{{$t("tips2")}}</p>
+        <img src="2.png" width="300" />
+        <p class="infotext" :class="{dark_infotext:$root.dark}">{{$t("tips3")}}</p>
+        <img src="3.png" width="300" />
+        <p>
+          <s-btn @click="helpdialog=false">{{$t("gotit")}}</s-btn>
+        </p>
+      </div>
     </transition>
     <div class="titlediv">
       <p class="title" :class="{dark_text:$root.dark}">{{$t("title")}}</p>
-      <p class="cardtext" :class="{dark_text:$root.dark}">
-      <label for="toggle" >
-  <input type="checkbox" id="toggle" v-model="orderplaymode" >
-  <span></span>
-  
-</label>
-{{$t("orderplaymode")}}
-      </p>
     </div>
     <div class="topdiv topdivO">
       <div class="card cardM" :class="{dark:$root.dark}">
@@ -75,16 +171,16 @@
           </svg>
           </button>
         </div>-->
-        <button
-          class="btn ripple githubbtn"
-          :class="{dark_btn:$root.dark}"
+        <s-btn
+          color="black"
+          class="githubbtn"
           @click="See('https://github.com/Coceki/new-pekobutton')"
         >
           <div>{{$t("helpdevelope")}}</div>
-        </button>
-        <button class="btn ripple" :class="{dark_btn:$root.dark}" @click="playSpecial()">
+        </s-btn>
+        <s-btn color="secondary" @click="playSpecial()">
           <div>Co↘ce↗ki↘お兄ちゃん</div>
-        </button>
+        </s-btn>
       </div>
       <div class="card cardM" :class="{dark:$root.dark}">
         <p class="cardtext" :class="{dark_text:$root.dark}">
@@ -100,7 +196,32 @@
           {{$t("helpcontent")}}
           <br />
           {{$t("additionalhelp")}}
+          <br />
         </div>
+        <s-btn color="red" @click="See('https://www.youtube.com/channel/UC1DCedRgGHBdm81E1llLhOQ')">
+          <svg
+            style="width:24px;height:24px;position:absolute;left:10px;bottom:50%;transform:translate3d(0,50%,0)"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="white"
+              d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"
+            />
+          </svg>
+          <a style="margin-left:30px">Pekora Ch. 兎田ぺこら</a>
+        </s-btn>
+        <s-btn color="blue" @click="See('https://twitter.com/usadapekora')">
+          <svg
+            style="width:24px;height:24px;position:absolute;left:10px;bottom:50%;transform:translate3d(0,50%,0)"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="white"
+              d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"
+            />
+          </svg>
+          <a style="margin-left:30px">Pekora Ch. 兎田ぺこら</a>
+        </s-btn>
       </div>
       <!-- 显示直播订阅信息 -->
       <div class="card cardM" :class="{dark:$root.dark}">
@@ -111,7 +232,6 @@
               d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"
             />
           </svg>
-
           {{$t("youtubesubs")}}
         </p>
         <div class="subnum" :class="{dark_infotext:$root.dark}">{{channel_subs}}</div>
@@ -120,6 +240,7 @@
           style="
               letter-spacing: 0.02em;margin-top:40px;margin-left:20px"
         >{{$t("streaming")}}</div>
+        <!-- 正在直播列表 -->
         <div class="liveinfo">
           <div
             class="card cardM"
@@ -127,8 +248,8 @@
             style="padding: 5px !important;
                   padding-bottom: 20px !important;
                   margin: 10px !important;"
-            v-for="(upcoming,index2) in channel_upcoming"
-            :key="index2"
+            v-for="(streaming,index3) in channel_streaming"
+            :key="index3"
           >
             <!-- <img width="200px" class="liveimg" :src="upcoming.snippet.thumbnails.medium.url"/> -->
             <p class="livetext" :class="{dark_text:$root.dark}">
@@ -138,13 +259,18 @@
                   d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M17 13H11V7H12.5V11.5H17V13Z"
                 />
               </svg>
-              {{upcoming.snippet.title}}
+              {{streaming.snippet.title}}
             </p>
-            <p :class="{dark_text:$root.dark}">{{upcoming.snippet.description}}</p>
-            <br>
-            <button class="goto" @click="See('https://www.youtube.com/watch?v='+upcoming.id.videoId)"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path fill="white" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-</svg></button>
+            <p :class="{dark_text:$root.dark}">{{streaming.snippet.description}}</p>
+            <br />
+            <button
+              class="goto"
+              @click="See('https://www.youtube.com/watch?v='+streaming.id.videoId)"
+            >
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="white" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+              </svg>
+            </button>
           </div>
         </div>
         <div
@@ -174,17 +300,28 @@
               {{upcoming.snippet.title}}
             </p>
             <p :class="{dark_text:$root.dark}">{{upcoming.snippet.description}}</p>
-            <br>
-            <button class="goto" @click="See('https://www.youtube.com/watch?v='+upcoming.id.videoId)"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path fill="white" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-</svg></button>
+            <br />
+            <button
+              class="goto"
+              @click="See('https://www.youtube.com/watch?v='+upcoming.id.videoId)"
+            >
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="white" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+              </svg>
+            </button>
           </div>
         </div>
-
       </div>
     </div>
     <hr class="line" v-if="$root.dark" color="#333" width="95%" />
     <hr class="line" v-else color="#EEE" width="95%" />
+    <p class="cardtext" :class="{dark_text:$root.dark}">
+        <label for="toggle">
+          <input type="checkbox" id="toggle" v-model="orderplaymode" />
+          <span></span>
+        </label>
+        {{$t("orderplaymode")}}
+      </p>
     <div class="topdiv">
       <div class="card" :class="{dark:$root.dark}" v-for="(group,index) in voices" :key="index">
         <p
@@ -203,40 +340,39 @@
           v-else-if="$i18n.locale=='en'"
         >{{group.translation.English}}</p>
         <div v-if="$i18n.locale=='zhHans'">
-          <button
-            class="btn ripple"
-            :class="{dark_btn:$root.dark}"
+          <s-btn
+            class="btn"
+            color="secondary"
             v-for="(voice,index1) in group.voicelist"
             :key="index1"
             @click="play(voice)"
           >
             <div>{{voice.translation.Chinese}}</div>
-          </button>
+          </s-btn>
         </div>
         <div v-else-if="$i18n.locale=='ja'">
-          <button
-            class="btn ripple"
-            :class="{dark_btn:$root.dark}"
+          <s-btn
+            color="secondary"
             v-for="(voice,index2) in group.voicelist"
             :key="index2"
             @click="play(voice)"
           >
             <div>{{voice.translation.Japanese}}</div>
-          </button>
+          </s-btn>
         </div>
         <div v-else-if="$i18n.locale=='en'">
-          <button
-            class="btn ripple"
-            :class="{dark_btn:$root.dark}"
+          <s-btn
+            color="secondary"
             v-for="(voice,index2) in group.voicelist"
             :key="index2"
             @click="play(voice)"
           >
             <div>{{voice.translation.English}}</div>
-          </button>
+          </s-btn>
         </div>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -256,7 +392,8 @@ export default {
     volume: 100,
     channel_info: null,
     channel_subs: null,
-    channel_upcoming: null
+    channel_upcoming: null,
+    channel_streaming: null
   }),
   created() {
     //window.console.log(this.voices); //装载语音包path
@@ -279,6 +416,17 @@ export default {
         window.console.log(response.data);
         this.channel_upcoming = response.data.items;
         window.console.log(this.channel_upcoming);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+      .then(function() {});
+    axios
+      .get("/api/php/streaming.php") //获取开播提醒
+      .then(response => {
+        //window.console.log(response.data);
+        this.channel_streaming = response.data.items;
+        window.console.log(this.channel_streaming);
       })
       .catch(function(error) {
         console.log(error);
@@ -370,7 +518,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scope>
+$secondary: linear-gradient(83.54deg, #ff9b53 -7.64%, #e6660a 145.94%);
 body {
   -webkit-overflow-scrolling: touch;
   background: linear-gradient(200.6deg, #ffffff 19.14%, #e9e9e9 154.68%);
@@ -382,6 +531,31 @@ body {
   -moz-perspective: 1000;
   -ms-perspective: 1000;
   perspective: 1000;
+}
+.btn div {
+  transition: 0.5s;
+  text-align: center;
+  padding-left: 11px;
+  padding-right: 11px;
+  display: inline-block;
+}
+
+.btn div:after {
+  content: "🥕";
+  position: absolute;
+  right: -12px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.btn:hover div {
+  padding-left: 0;
+  padding-right: 22px;
+}
+.btn:hover div:after {
+  right: 5px;
+  opacity: 1;
+  transition: 0.5s;
+  text-align: center;
 }
 .dark {
   background: linear-gradient(
@@ -444,71 +618,8 @@ body {
 .dark_text {
   color: rgb(255, 255, 255) !important;
 }
-.githubbtn {
-  background: linear-gradient(
-    83.54deg,
-    #000000 -7.64%,
-    #303030 145.94%
-  ) !important;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.42),
-    -2px -2px 5px rgba(238, 238, 238, 0.6) !important;
-}
 .githubbtn div:after {
   content: "🔨" !important;
-}
-.btn {
-  position: relative;
-  border-radius: 16px;
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #fff;
-  font-size: 15px;
-  align-items: center;
-  text-align: center;
-  border: 0pt;
-  outline: none;
-  background: linear-gradient(83.54deg, #ff9b53 -7.64%, #e6660a 145.94%);
-  box-shadow: 2px 3px 5px rgba(244, 102, 0, 0.42),
-    -2px -2px 5px rgba(255, 255, 255, 0.6);
-  transition: 0.5s;
-}
-.dark_btn {
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.42), -2px -2px 5px rgba(0, 0, 0, 0.6) !important;
-}
-.btn div {
-  transition: 0.5s;
-  text-align: center;
-  padding-left: 11px;
-  padding-right: 11px;
-  display: inline-block;
-}
-
-.btn div:after {
-  content: "🥕";
-  position: absolute;
-  right: -12px;
-  opacity: 0;
-  transition: 0.5s;
-}
-.btn:hover div {
-  padding-left: 0;
-  padding-right: 22px;
-}
-.btn:hover div:after {
-  right: 5px;
-  opacity: 1;
-  transition: 0.5s;
-  text-align: center;
-}
-.btn:active {
-  box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295),
-    inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important;
-}
-.btn:hover {
-  box-shadow: 2px 3px 40px rgba(244, 102, 0, 0.42),
-    -2px -2px 16px rgba(255, 255, 255, 0.6);
 }
 .title {
   font-family: Helvetica;
@@ -524,35 +635,6 @@ body {
   margin-top: 100px;
 }
 
-.ripple {
-  overflow: hidden;
-}
-.ripple:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    circle,
-    rgb(255, 255, 255) 10%,
-    transparent 10.01%
-  );
-  background-repeat: no-repeat;
-  background-position: 50%;
-  transform: scale(10, 10);
-  opacity: 0;
-  transition: transform 0.4s, opacity 0.6s;
-}
-
-.ripple:active:after {
-  transform: scale(0, 0);
-  opacity: 0.3;
-  transition: 0s;
-}
 .infotext {
   margin: 10px;
   font-family: Helvetica;
@@ -582,29 +664,45 @@ body {
 .livetext {
   font-weight: bolder;
 }
-.helpdialog{
+.helpdialog {
+  padding: 10px;
+  overflow:scroll;
+  overflow-x: hidden !important;
   position: fixed;
-  max-width: 600px;
-  z-index:11;
+  min-width: 80%;
+  max-height:90%;
+  z-index: 14;
   top: 50%;
   left: 50%;
-  transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%, -50%, 0);
 }
-.dialog_back{
+.dialog_back {
   position: fixed;
   margin: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index:10;
+  z-index: 13;
   background-color: rgba(0, 0, 0, 0.42);
   background-blend-mode: normal, luminosity;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   width: 100%;
   height: 100%;
-
+}
+.orderdialog {
+  
+  padding: 10px;
+  overflow:scroll;
+  overflow-x: hidden !important;
+  position: fixed;
+  min-width: 80%;
+  max-height:90%;
+  z-index: 14;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }
 /* .likebtn{
   border: 0pt;
@@ -630,11 +728,13 @@ body {
   --button-width: 55px;
   --button-height: 32px;
   --toggle-diameter: 28px;
-  --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+  --button-toggle-offset: calc(
+    (var(--button-height) - var(--toggle-diameter)) / 2
+  );
   --toggle-shadow-offset: 10px;
   --toggle-wider: 35px;
-  --color-grey: #E9E9E9;
-  --color-dark-grey: #39393D;
+  --color-grey: #e9e9e9;
+  --color-dark-grey: #39393d;
   --color-green: #ff9b53;
 }
 
@@ -645,11 +745,11 @@ span {
   background-color: var(--color-grey);
   border-radius: calc(var(--button-height) / 2);
   position: relative;
-  transition: .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 span::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: var(--toggle-diameter);
   height: var(--toggle-diameter);
@@ -658,16 +758,22 @@ span::after {
   position: absolute;
   top: var(--button-toggle-offset);
   transform: translateX(var(--button-toggle-offset));
-  box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, .10);
-  transition: .3s all ease-in-out;
+  box-shadow: var(--toggle-shadow-offset) 0
+    calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
 }
 input[type="checkbox"]:checked + span {
   background-color: var(--color-green);
 }
 
 input[type="checkbox"]:checked + span::after {
-  transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
-  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, .10);
+  transform: translateX(
+    calc(
+      var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)
+    )
+  );
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0
+    calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
 }
 
 input[type="checkbox"] {
@@ -677,14 +783,18 @@ input[type="checkbox"] {
 input[type="checkbox"]:active + span::after {
   width: var(--toggle-wider);
 }
-label{
+label {
   margin-left: 45%;
   margin-right: 20px;
 }
 input[type="checkbox"]:checked:active + span::after {
-  transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+  transform: translateX(
+    calc(
+      var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)
+    )
+  );
 }
-.goto{
+.goto {
   padding: 10px;
   position: absolute;
   bottom: 10px;
@@ -700,6 +810,25 @@ input[type="checkbox"]:checked:active + span::after {
   box-shadow: 3px 6px 20px rgba(104, 102, 255, 0.44);
   z-index: 1;
 }
+.deletebtn{
+  
+  border: 0pt;
+  outline: none;
+  border-radius: 999px;
+
+  background: rgba(255, 0, 0, 0);
+  transform: translate3d(-80%,-20%,0);
+
+}
+.closebtn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0pt;
+  outline: none;
+  border-radius: 999px;
+  background: rgba(255, 0, 0, 0);
+}
 @media (min-width: 1300px) {
   .card:hover {
     box-shadow: 18px 12px 80px rgba(136, 165, 191, 0.36),
@@ -708,6 +837,9 @@ input[type="checkbox"]:checked:active + span::after {
   }
   .topdiv {
     padding: 50px;
+  }
+  .topdivO {
+    column-count: 2 !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1300px) {
@@ -748,14 +880,14 @@ input[type="checkbox"]:checked:active + span::after {
   .liveimg {
   }
 }
-.dialog-scale-enter-active{
-  transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  
+.dialog-scale-enter-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.dialog-scale-leave-active{
-  transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+.dialog-scale-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.dialog-scale-enter ,.dialog-scale-leave-to{
-  opacity: 0;
+.dialog-scale-enter,
+.dialog-scale-leave-to {
+  transform: scale3d(0,0,0);;
 }
 </style>

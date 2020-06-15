@@ -8,7 +8,7 @@ if (workbox) {
 // 设置缓存前缀和后缀，请根据实际项目名修改
 workbox.core.setCacheNameDetails({
     prefix: 'pekobutton',
-    suffix: 'v1.0.5'
+    suffix: 'v2.0.1'
 });
 
 

@@ -1,0 +1,77 @@
+$secondary: linear-gradient(83.54deg, #ff9b53 -7.64%, #e6660a 145.94%);
+$primary: linear-gradient(200.6deg, #244dff8a 19.14%, #0e9dfc6c 154.68%);
+$black: linear-gradient(83.54deg, #000000 -7.64%, #303030 145.94%);
+$red: linear-gradient(83.54deg, #ff2424 -7.64%, #ca0000 145.94%);
+$blue: linear-gradient(83.54deg, #009ffc -7.64%, #00a2ca 145.94%);
+$purple: linear-gradient(83.54deg, #c100fc -7.64%, #aa00b9 145.94%);
+$brown: linear-gradient(83.54deg, #ad5003 -7.64%, #946000 145.94%);
+.color-primary {
+    background: $primary;
+    box-shadow: 3px 6px 20px rgba(104, 102, 255, 0.44), -3px -6px 10px rgba(255, 255, 255, 0.6);
+}
+
+.color-secondary {
+    background: $secondary;
+    box-shadow: 2px 3px 5px rgba(244, 102, 0, 0.42), -2px -2px 5px rgba(255, 255, 255, 0.6);
+    &:hover {
+        box-shadow: 2px 3px 40px rgba(244, 102, 0, 0.42), -2px -2px 16px rgba(255, 255, 255, 0.6)
+    }
+    &:active {
+        box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295), inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important
+    }
+}
+
+.color-black {
+    background: $black;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.42), -2px -2px 5px rgba(238, 238, 238, 0.6);
+    &:hover {
+        box-shadow: 2px 3px 40px rgba(20, 20, 20, 0.42), -2px -2px 16px rgba(0, 0, 0, 0.6)
+    }
+    &:active {
+        box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295), inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important
+    }
+}
+
+.color-red {
+    background: $red;
+    box-shadow: 2px 3px 5px rgba(75, 0, 0, 0.42), -2px -2px 5px rgba(255, 255, 255, 0.6);
+    &:hover {
+        box-shadow: 2px 3px 40px rgba(75, 0, 0, 0.42), -2px -2px 16px rgba(255, 255, 255, 0.6)
+    }
+    &:active {
+        box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295), inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important
+    }
+}
+
+.color-blue {
+    background: $blue;
+    box-shadow: 2px 3px 5px rgba(0, 63, 88, 0.42), -2px -2px 5px rgba(255, 255, 255, 0.6);
+    &:hover {
+        box-shadow: 2px 3px 40px rgba(0, 70, 117, 0.42), -2px -2px 16px rgba(255, 255, 255, 0.6)
+    }
+    &:active {
+        box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295), inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important
+    }
+}
+
+.color-purple {
+    background: $purple;
+    box-shadow: 2px 3px 5px rgba(40, 0, 56, 0.42), -2px -2px 5px rgba(255, 255, 255, 0.6);
+    &:hover {
+        box-shadow: 2px 3px 40px rgba(58, 0, 70, 0.42), -2px -2px 16px rgba(255, 255, 255, 0.6)
+    }
+    &:active {
+        box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295), inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important
+    }
+}
+
+.color-brown {
+    background: $brown;
+    box-shadow: 2px 3px 5px rgba(56, 38, 0, 0.42), -2px -2px 5px rgba(255, 255, 255, 0.6);
+    &:hover {
+        box-shadow: 2px 3px 40px rgba(70, 46, 0, 0.42), -2px -2px 16px rgba(255, 255, 255, 0.6)
+    }
+    &:active {
+        box-shadow: inset 3px 3px 10px rgba(54, 23, 0, 0.295), inset -3px -3px 10px rgba(0, 0, 0, 0.705) !important
+    }
+}
