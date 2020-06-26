@@ -631,6 +631,15 @@
                     }
                 },
                 {
+                    "name": "尖叫",
+                    "path": "尖叫.mp3",
+                    "translation": {
+                        "Chinese": "尖叫（音量注意）",
+                        "Japanese": "悲鳴（ボリュームに注意）",
+                        "English": "scream(Volume Warning)"
+                    }
+                },
+                {
                     "name": "你在干什么peko（音量注意）",
                     "path": "你在干什么peko（音量注意）.mp3",
                     "translation": {

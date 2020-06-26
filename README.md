@@ -56,4 +56,4 @@
 * [野兔子同好会](https://space.bilibili.com/2469920)
 * [昭和歌姬夏半首](https://space.bilibili.com/114298950)
 * [Richard_Al](https://space.bilibili.com/34401008)
-
+* [山に住むの良い妖怪](https://space.bilibili.com/299970757)
