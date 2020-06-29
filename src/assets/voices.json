@@ -77,7 +77,7 @@
             "name": "others",
             "translation": {
                 "Chinese": "通用",
-                "Japanese": "ユニバーサル",
+                "Japanese": "一般",
                 "English": "General"
             },
             "voicelist": [{
@@ -484,7 +484,7 @@
             "name": "？抖M福利",
             "translation": {
                 "Chinese": "？抖M福利",
-                "Japanese": "マリオで苛める時",
+                "Japanese": "ぺこ虐マリオ",
                 "English": "Mature Mario Playthrough"
             },
             "voicelist": [{
@@ -501,8 +501,8 @@
                     "path": "死小孩快滚去吃饭啊白痴！.mp3",
                     "translation": {
                         "Chinese": "死小孩快滚去吃饭啊白痴！",
-                        "Japanese": "くそガキがよ、早く来い、学校に行けよ、馬鹿野郎！",
-                        "English": "Damn you, kid, hurry up and go back to school, you idiot."
+                        "Japanese": "くそガキがよ、早くご飯食いに行けよ、馬鹿野郎！",
+                        "English": "Damn you, kid, get out now and go dinner, you idiot."
                     }
                 },
                 {
@@ -510,7 +510,7 @@
                     "path": "别在这里看我直播了死小孩！.mp3",
                     "translation": {
                         "Chinese": "别在这里看我直播了死小孩！",
-                        "Japanese": "見てんじゃねよこの放送いや！くそガキが！",
+                        "Japanese": "見てんじゃねよこの放送をよ！くそガキが！",
                         "English": "You son of *****, don't watch my stream."
                     }
                 },
@@ -519,7 +519,7 @@
                     "path": "快放完你的正月假滚回学校去啊！.mp3",
                     "translation": {
                         "Chinese": "快放完你的正月假滚回学校去啊！",
-                        "Japanese": "早く正月あきれ…飽きて学校に行ってみるよ！",
+                        "Japanese": "早く正月あけれ…明けて学校に行ってみろよ！",
                         "English": "Finish your winter vacation and go back to grade school!"
                     }
                 },
@@ -528,7 +528,7 @@
                     "path": "放学来操场后面我削不死你.mp3",
                     "translation": {
                         "Chinese": "放学来操场后面我削不死你",
-                        "Japanese": "お前後で体育館の裏に来いよ。ボコボコにしてやるからな。",
+                        "Japanese": "お前後で体育館の裏に来いよ。ボコボコにしてやっからな。",
                         "English": "Come to gym afterward, I'm going to kick your @$$."
                     }
                 },
@@ -537,7 +537,7 @@
                     "path": "你们真的是一群色小鬼.m4a",
                     "translation": {
                         "Chinese": "你们真的是一群色小鬼",
-                        "Japanese": "あんたたち本当にエロガキだねぇ。",
+                        "Japanese": "あんたたち本当さ~、エロガキだねぇ。",
                         "English": "You kids are really vulgar."
                     }
                 }
@@ -547,7 +547,7 @@
             "name": "名言",
             "translation": {
                 "Chinese": "名言",
-                "Japanese": "有名なことわざ",
+                "Japanese": "名言",
                 "English": "Phrases"
             },
             "voicelist": [{
@@ -555,7 +555,7 @@
                     "path": "喜欢佩克拉的话就推啊.mp3",
                     "translation": {
                         "Chinese": "喜欢佩克拉的话就推啊",
-                        "Japanese": "ぺこらを好きなら押せよずっとと",
+                        "Japanese": "ぺこーらを好きなら推せよずっとと",
                         "English": "If you like Pekora, push it!"
                     }
                 },
@@ -564,7 +564,7 @@
                     "path": "喜欢就推就好了啦.mp3",
                     "translation": {
                         "Chinese": "喜欢就推就好了啦",
-                        "Japanese": "押せただ、それだけだと思う",
+                        "Japanese": "推せただ、それだけや!と思う",
                         "English": "Just push it, that's all."
                     }
                 },
@@ -573,7 +573,7 @@
                     "path": "佩克拉喜欢在现实中看见别人流泪的样子.mp3",
                     "translation": {
                         "Chinese": "佩克拉喜欢在现实中看见别人流泪的样子",
-                        "Japanese": "…とはぺこらはレアルでの涙の流して姿をジッと見るが好きなの。",
+                        "Japanese": "あとはぺこらはリアルでね、涙を流してる姿をジッと見るが好きなの。",
                         "English": "In real life, Pekora loves watching their crying faces."
                     }
                 },
@@ -628,7 +628,7 @@
             "name": "suprise",
             "translation": {
                 "Chinese": "惊叹",
-                "Japanese": "マーベル",
+                "Japanese": "悲鳴",
                 "English": "Surprise"
             },
             "voicelist": [{
@@ -672,7 +672,7 @@
                     "path": "啊！搞错了！.mp3",
                     "translation": {
                         "Chinese": "啊！搞错了！",
-                        "Japanese": "あっ、間違った",
+                        "Japanese": "あっ、間違えた",
                         "English": "Ah... I messed up!"
                     }
                 }
