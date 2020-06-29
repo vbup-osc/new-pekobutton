@@ -51,6 +51,8 @@
 
 日语翻译
 * [HayatoTenryuu](https://github.com/HayatoTenryuu)
+* [Hoshi-LL](https://github.com/Hoshi-LL)
+* [gecko655](https://github.com/gecko655)
 
 英语翻译：
 * [HoloLive Moments](https://www.youtube.com/channel/UCK4adPCSc8U1mhaJYbzZ-7w)

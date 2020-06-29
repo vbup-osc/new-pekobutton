@@ -89,6 +89,7 @@ export default {
       alert("Sorry but IE is not supported on this page");
       this.See("https://www.google.cn/intl/zh-CN/chrome/");
     }
+    //document.body.removeChild(document.getElementById('loader-wrapper'));
   },
   mounted() {
     let timeNow = new Date();
