@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <transition name="fab-scale">
-    <button v-show="gotop" @click="toTop" class="fabbtn"><svg style="width:36px;height:36px" viewBox="0 0 24 24">
-    <path fill="white" d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
-</svg></button>
+      <button v-show="gotop" @click="toTop" class="fabbtn">
+        <svg style="width:36px;height:36px" viewBox="0 0 24 24">
+          <path
+            fill="white"
+            d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z"
+          />
+        </svg>
+      </button>
     </transition>
     <Topbar></Topbar>
     <router-view></router-view>
@@ -14,116 +19,127 @@
       <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("credits")}}</p>
       <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("translationCredits")}}</p>
       <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("friendlinks")}}</p>
-      <s-btn v-for="(link,index) in links" :key="index" :color="link.color" @click="See(link.href)">{{link.name}}</s-btn>
+      <s-btn
+        v-for="(link,index) in links"
+        :key="index"
+        :color="link.color"
+        @click="See(link.href)"
+      >{{link.name}}</s-btn>
       <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("developerinfo")}}</p>
     </div>
   </div>
-  
 </template>
 <script>
-import Topbar from "./components/Topbar.vue"
+import Topbar from "./components/Topbar.vue";
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    Topbar,
+    Topbar
   },
 
   data: () => ({
-    gotop:false,
-    prompt:false,
-    deferred:null,
+    gotop: false,
+    prompt: false,
+    deferred: null,
     //addtoscreendialog:false,
-    links:[
+    links: [
       {
-        name:"VTuber按钮合集",
-        href:"https://vtbbtn.org/",
-        color:"primary"
+        name: "VTuber按钮合集",
+        href: "https://vtbbtn.org/",
+        color: "primary"
       },
       {
-        name:"夸按钮/あくあボタン",
-        href:"https://aquaminato.moe/",
-        color:"purple"
+        name: "夸按钮/あくあボタン",
+        href: "https://aquaminato.moe/",
+        color: "purple"
       },
       {
-        name:"狐按钮/フブキボタン",
-        href:"https://sfubuki.moe/",
-        color:"blue"
+        name: "狐按钮/フブキボタン",
+        href: "https://sfubuki.moe/",
+        color: "blue"
       },
       {
-        name:"祭按钮/まつりボタン",
-        href:"https://natsuiromatsuri.moe/",
-        color:"secondary"
+        name: "祭按钮/まつりボタン",
+        href: "https://natsuiromatsuri.moe/",
+        color: "secondary"
       },
       {
-        name:"狼按钮/ミオボタン",
-        href:"https://ookamimio.org/",
-        color:"black"
+        name: "狼按钮/ミオボタン",
+        href: "https://ookamimio.org/",
+        color: "black"
       },
       {
-        name:"余按钮/なきりあやめボタン",
-        href:"https://nakiriayame.moe/",
-        color:"red"
+        name: "余按钮/なきりあやめボタン",
+        href: "https://nakiriayame.moe/",
+        color: "red"
       },
       {
-        name:"狗按钮/ころねボタン",
-        href:"https://korone.icu/",
-        color:"brown"
-      },
-    ],
+        name: "狗按钮/ころねボタン",
+        href: "https://korone.icu/",
+        color: "brown"
+      }
+    ]
     //
   }),
-  created(){
-    if (!!window.ActiveXObject || "ActiveXObject" in window) {//不会还有人在用IE吧，不会吧不会吧
+  created() {
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+      //不会还有人在用IE吧，不会吧不会吧
       window.console.log("IE警察出动！");
-        alert("给我滚去下Chrome啊kora！");
-        this.See("https://www.google.cn/intl/zh-CN/chrome/");
+      alert("Sorry but IE is not supported on this page");
+      this.See("https://www.google.cn/intl/zh-CN/chrome/");
     }
   },
-  mounted(){
+  mounted() {
     let timeNow = new Date();
     let hours = timeNow.getHours();
-    if (hours<6||hours>18){//自动触发夜间模式
+    if (hours < 6 || hours > 18) {
+      //自动触发夜间模式
       this.$store.commit("change_dark_mode");
-      this.$root.dark=this.$store.state.dark_mode;
-      
-      window.console.log(this.$root.dark)
+      this.$root.dark = this.$store.state.dark_mode;
+
+      window.console.log(this.$root.dark);
     }
-    
-    window.onbeforeinstallprompt = (e) => {     //当浏览器触发横幅显示事件
-                window.console.log(e);
-                this.prompt = true;
-                this.deferred = e;
-                //window.console.log(this.prompt);
-                this.showAddToHomeScreen();
-            }
+
+    window.onbeforeinstallprompt = e => {
+      //当浏览器触发横幅显示事件
+      window.console.log(e);
+      this.prompt = true;
+      this.deferred = e;
+      //window.console.log(this.prompt);
+      this.showAddToHomeScreen();
+    };
     window.addEventListener("scroll", this.handleScroll, true);
-    this.$i18n.locale="zhHans";
-    if (this.$cookies.isKey("Lang")){
-      this.$i18n.locale=this.$cookies.get("Lang");
-    
+    if (this.$cookies.isKey("Lang")) {
+      this.$i18n.locale = this.$cookies.get("Lang");
+    } else {
+      let lang = navigator.language;
+      if (lang === "zh" || lang === "zh-CN") {
+        this.$i18n.locale = "zhHans";
+      } else if (lang === "ja" || lang === "ja-JP") {
+        this.$i18n.locale = "ja";
+      } else {
+        localStorage.setItem("lang", "en");
+      }
     }
   },
   methods: {
-    showAddToHomeScreen(){
-        window.console.log("success");
-        //this.addtoscreendialog=true;
-
+    showAddToHomeScreen() {
+      window.console.log("success");
+      //this.addtoscreendialog=true;
     },
-    addToHomescreen(){
-        this.deferred.prompt();
-        let _this=this
-        this.deferred.userChoice
-      .then(function (choiceResult) {
-        if (choiceResult.outcome === 'accepted') {
-          window.console.log('User accepted the A2HS prompt');
-          _this.addtoscreendialog=false;
+    addToHomescreen() {
+      this.deferred.prompt();
+      let _this = this;
+      this.deferred.userChoice.then(function(choiceResult) {
+        if (choiceResult.outcome === "accepted") {
+          window.console.log("User accepted the A2HS prompt");
+          _this.addtoscreendialog = false;
         } else {
-          window.console.log('User dismissed the A2HS prompt');
+          window.console.log("User dismissed the A2HS prompt");
         }
         // 释放不再有用的deferredPrompt对象
       });
-      
     },
     handleScroll() {
       let scrolltop =
@@ -140,11 +156,11 @@ export default {
         }
       }, 10);
     },
-    See (e) {
-        window.location.href = e
-      }
+    See(e) {
+      window.location.href = e;
     }
-}
+  }
+};
 </script>
 
 <style>
@@ -155,7 +171,7 @@ export default {
   letter-spacing: 0.02em;
   color: #4646468a;
 }
-.fabbtn{
+.fabbtn {
   padding: 10px;
   position: fixed;
   bottom: 30px;
@@ -171,38 +187,43 @@ export default {
   box-shadow: 3px 6px 20px rgba(104, 102, 255, 0.44);
   z-index: 9;
 }
-.fabbtn:after{
+.fabbtn:after {
   content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    background-image: radial-gradient(circle, rgb(255, 255, 255) 10%, transparent 10.01%);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    transform: scale(10, 10);
-    opacity: 0;
-    transition: transform .4s, opacity .6s;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 10%,
+    transparent 10.01%
+  );
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.6s;
 }
 .fabbtn:active:after {
-    transform: scale(0, 0);
-    opacity: .3;
-    transition: 0s;
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
 }
-.fabbtn:active{
-  box-shadow: inset 3px 3px 10px rgba(0, 4, 54, 0.295), inset -3px -3px 10px rgba(0, 119, 255, 0.705) !important;
+.fabbtn:active {
+  box-shadow: inset 3px 3px 10px rgba(0, 4, 54, 0.295),
+    inset -3px -3px 10px rgba(0, 119, 255, 0.705) !important;
 }
-.fab-scale-enter-active{
-  transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  
+.fab-scale-enter-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.fab-scale-leave-active{
-  transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+.fab-scale-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.fab-scale-enter ,.fab-scale-leave-to{
+.fab-scale-enter,
+.fab-scale-leave-to {
   transform: rotateY(90deg);
 }
 </style>

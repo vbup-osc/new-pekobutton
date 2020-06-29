@@ -49,6 +49,9 @@
 代码：  
 * [Coceki](https://space.bilibili.com/11229533)  
 
+日语翻译
+* [HayatoTenryuu](https://github.com/HayatoTenryuu)
+
 英语翻译：
 * [HoloLive Moments](https://www.youtube.com/channel/UCK4adPCSc8U1mhaJYbzZ-7w)
 

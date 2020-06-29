@@ -100,7 +100,7 @@
                 },
                 {
                     "name": "对不起",
-                    "path": "对不起.wav",
+                    "path": "对不起.mp3",
                     "translation": {
                         "Chinese": "对不起~",
                         "Japanese": "ごめんなさい~",
@@ -109,7 +109,7 @@
                 },
                 {
                     "name": "真可爱呢",
-                    "path": "真可爱呢.wav",
+                    "path": "真可爱呢.mp3",
                     "translation": {
                         "Chinese": "真可爱呢",
                         "Japanese": "可愛いかったね",
@@ -118,7 +118,7 @@
                 },
                 {
                     "name": "要上喽~",
-                    "path": "要上喽~.wav",
+                    "path": "要上喽~.mp3",
                     "translation": {
                         "Chinese": "要上喽~",
                         "Japanese": "行くよ~",
@@ -127,7 +127,7 @@
                 },
                 {
                     "name": "Duuuuu马猴~",
-                    "path": "Duuuuu马猴~.wav",
+                    "path": "Duuuuu马猴~.mp3",
                     "translation": {
                         "Chinese": "Uuuuuu马猴~",
                         "Japanese": "ウゥゥゥゥゥ魔法~",
@@ -201,7 +201,7 @@
             },
             "voicelist": [{
                     "name": "嗨！",
-                    "path": "嗨！.wav",
+                    "path": "嗨！.mp3",
                     "translation": {
                         "Chinese": "嗨！",
                         "Japanese": "ハイ!",
@@ -210,7 +210,7 @@
                 },
                 {
                     "name": "喵哈喽~",
-                    "path": "喵哈喽~.wav",
+                    "path": "喵哈喽~.mp3",
                     "translation": {
                         "Chinese": "喵哈喽~",
                         "Japanese": "にゃっはろー",
@@ -219,7 +219,7 @@
                 },
                 {
                     "name": "自我介绍",
-                    "path": "自我介绍.wav",
+                    "path": "自我介绍.mp3",
                     "translation": {
                         "Chinese": "自我介绍",
                         "Japanese": "自己紹介",
@@ -255,7 +255,7 @@
                 },
                 {
                     "name": "阿里嘎多peko",
-                    "path": "阿里嘎多peko.wav",
+                    "path": "阿里嘎多peko.mp3",
                     "translation": {
                         "Chinese": "阿里嘎多peko",
                         "Japanese": "ありがとうぺこ",
@@ -318,7 +318,7 @@
                 },
                 {
                     "name": "Olreeee!",
-                    "path": "Olreeee.wav",
+                    "path": "Olreeee.mp3",
                     "translation": {
                         "Chinese": "Olreeee!",
                         "Japanese": "オッッレェェェェ!",
@@ -354,7 +354,7 @@
                 },
                 {
                     "name": "PONPONPONPON",
-                    "path": "PONPONPONPON.wav",
+                    "path": "PONPONPONPON.mp3",
                     "translation": {
                         "Chinese": "PONPONPONPON",
                         "Japanese": "ポンポンポンポン",
@@ -363,7 +363,7 @@
                 },
                 {
                     "name": "Prrrrrre",
-                    "path": "Prrrrrre.wav",
+                    "path": "Prrrrrre.mp3",
                     "translation": {
                         "Chinese": "Prrrrrre",
                         "Japanese": "フッッラット",
@@ -372,7 +372,7 @@
                 },
                 {
                     "name": "Sei~no",
-                    "path": "Seino.wav",
+                    "path": "Seino.mp3",
                     "translation": {
                         "Chinese": "Sei~no",
                         "Japanese": "せーの",
@@ -417,7 +417,7 @@
                 },
                 {
                     "name": "boooou~~",
-                    "path": "boooou~~.wav",
+                    "path": "boooou~~.mp3",
                     "translation": {
                         "Chinese": "boooou~~",
                         "Japanese": "ブゥゥゥゥ~",
@@ -426,7 +426,7 @@
                 },
                 {
                     "name": "嗨↑嗨↑嗨↑",
-                    "path": "嗨↑嗨↑嗨↑.wav",
+                    "path": "嗨↑嗨↑嗨↑.mp3",
                     "translation": {
                         "Chinese": "嗨↑嗨↑嗨↑",
                         "Japanese": "はい↑はい↑はい↑",
@@ -435,7 +435,7 @@
                 },
                 {
                     "name": "啦啦啦啦啦",
-                    "path": "啦啦啦啦啦.wav",
+                    "path": "啦啦啦啦啦.mp3",
                     "translation": {
                         "Chinese": "啦啦啦啦啦",
                         "Japanese": "ラララララララ",
@@ -444,7 +444,7 @@
                 },
                 {
                     "name": "Ma⬆↓",
-                    "path": "Ma⬆↓.wav",
+                    "path": "Ma⬆↓.mp3",
                     "translation": {
                         "Chinese": "Ma⬆↓",
                         "Japanese": "まぁ⬆↓",
@@ -489,7 +489,7 @@
             },
             "voicelist": [{
                     "name": "恶心心",
-                    "path": "恶心心.wav",
+                    "path": "恶心心.mp3",
                     "translation": {
                         "Chinese": "恶心心",
                         "Japanese": "気持ち悪い",
@@ -525,7 +525,7 @@
                 },
                 {
                     "name": "放学来操场后面我削不死你",
-                    "path": "放学来操场后面我削不死你.wav",
+                    "path": "放学来操场后面我削不死你.mp3",
                     "translation": {
                         "Chinese": "放学来操场后面我削不死你",
                         "Japanese": "お前後で体育館の裏に来いよ。ボコボコにしてあるからな。",
@@ -547,7 +547,7 @@
             "name": "名言",
             "translation": {
                 "Chinese": "名言",
-                "Japanese": "有名なことわざ"
+                "Japanese": "有名なことわざ",
                 "English": "Phrases"
             },
             "voicelist": [{
