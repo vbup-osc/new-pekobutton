@@ -603,6 +603,9 @@ body {
   box-sizing: border-box;
   align-items: center;
   width: 100%;
+  .card:first-child {
+    margin-top: 0;
+  }
 }
 .topdivO {
   column-count: 2;
