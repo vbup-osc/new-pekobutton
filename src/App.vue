@@ -117,9 +117,12 @@ export default {
       let lang = navigator.language;
       if (lang === "zh" || lang === "zh-CN") {
         this.$i18n.locale = "zhHans";
+        localStorage.setItem("lang", "zhHans");
       } else if (lang === "ja" || lang === "ja-JP") {
         this.$i18n.locale = "ja";
+        localStorage.setItem("lang", "ja");
       } else {
+        this.$i18n.locale = "en";
         localStorage.setItem("lang", "en");
       }
     }
