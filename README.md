@@ -57,8 +57,9 @@
 英语翻译：
 * [HoloLive Moments](https://www.youtube.com/channel/UCK4adPCSc8U1mhaJYbzZ-7w)
 
-特别感谢：  
+素材剪辑提供：  
 * [野兔子同好会](https://space.bilibili.com/2469920)
 * [昭和歌姬夏半首](https://space.bilibili.com/114298950)
 * [Richard_Al](https://space.bilibili.com/34401008)
 * [山に住むの良い妖怪](https://space.bilibili.com/299970757)
+* [Qradn](https://space.bilibili.com/18725633)

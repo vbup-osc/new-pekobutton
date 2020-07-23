@@ -8,10 +8,10 @@
         />
       </svg>
     </button>
-    <button class="themebtn ripple" @click="DarkMode()">
+    <button alt="黑夜模式" class="themebtn ripple" @click="DarkMode()">
       <svg style='width:24px;height:24px' viewBox='0 0 24 24'><path fill='white' :d="darkmodeicon" /></svg>
     </button>
-    <p>{{$t("title")}}</p>
+    <p alt="peko按钮">{{$t("title")}}</p>
     <transition name="langmenu-scale">
     <div v-show="showlangmenu" class="langmenu" :class="{dark:$root.dark}" @mouseleave="showlangmenu=false">
           <button class="menubtn" :class="{dark_text:$root.dark}" v-for="(lang,index) in langs" :key="index" @click="ChangeLang(lang.src)"><div>{{lang.title}}</div></button>

@@ -50,7 +50,324 @@
                         "Japanese": "は→は→は↗は↑は→は→",
                         "English": "HA→HA→HA↗HA↑HA→HA→"
                     }
+                },
+                {
+                    "name": "はっはっは   哈↓哈↑哈↑ ",
+                    "path": "はっはっは   哈↓哈↑哈↑ .mp3",
+                    "translation": {
+                        "Chinese": "哈↓哈↑哈↑",
+                        "Japanese": "は↓は↑は↑",
+                        "English": "HA↓HA↑HA↑"
+                    }
                 }
+
+            ]
+        },
+        {
+            "name": "Pekora",
+            "translation": {
+                "Chinese": "？佩克拉钦定语音",
+                "Japanese": "ぺこらのために",
+                "English": "Collection for Pekora"
+            },
+            "voicelist": [{
+                    "name": "あんたさー   你啊",
+                    "path": "あんたさー   你啊.mp3",
+                    "translation": {
+                        "Chinese": "你啊",
+                        "Japanese": "あんたさー",
+                        "English": "You"
+                    }
+                },
+                {
+                    "name": "うーん、トマトみたい   嗯、像番茄一样",
+                    "path": "うーん、トマトみたい   嗯、像番茄一样.mp3",
+                    "translation": {
+                        "Chinese": "嗯、像番茄一样",
+                        "Japanese": "うーん、トマトみたい",
+                        "English": "En, like a tomato"
+                    }
+                },
+                {
+                    "name": "うそぺこでしょ   骗人的吧peko",
+                    "path": "うそぺこでしょ   骗人的吧peko.mp3",
+                    "translation": {
+                        "Chinese": "骗人的吧peko",
+                        "Japanese": "うそぺこでしょ",
+                        "English": "You are kidding peko"
+                    }
+                },
+                {
+                    "name": "うん 嗯嗯",
+                    "path": "うん 嗯嗯.mp3",
+                    "translation": {
+                        "Chinese": "嗯嗯",
+                        "Japanese": "うん",
+                        "English": "En En"
+                    }
+                },
+                {
+                    "name": "え～ 唉~",
+                    "path": "え～ 唉~.mp3",
+                    "translation": {
+                        "Chinese": "唉~",
+                        "Japanese": "え～",
+                        "English": "Ennnn~"
+                    }
+                },
+                {
+                    "name": "おけぺこ   OKpeko",
+                    "path": "おけぺこ   OKpeko.mp3",
+                    "translation": {
+                        "Chinese": "Ok peko",
+                        "Japanese": "おけぺこ",
+                        "English": "Ok peko"
+                    }
+                },
+                {
+                    "name": "き↑tら   来↑啦",
+                    "path": "き↑tら   来↑啦.mp3",
+                    "translation": {
+                        "Chinese": "来↑啦",
+                        "Japanese": "き↑tら",
+                        "English": "Com↑ing"
+                    }
+                },
+                {
+                    "name": "きtら   来啦",
+                    "path": "きtら   来啦.mp3",
+                    "translation": {
+                        "Chinese": "来啦",
+                        "Japanese": "きtら",
+                        "English": "Coming"
+                    }
+                },
+                {
+                    "name": "こんにちは   你好",
+                    "path": "こんにちは   你好.mp3",
+                    "translation": {
+                        "Chinese": "你好",
+                        "Japanese": "こんにちは",
+                        "English": "Hello"
+                    }
+                },
+                {
+                    "name": "こんべこ   你好peko",
+                    "path": "こんべこ   你好peko.mp3",
+                    "translation": {
+                        "Chinese": "你好peko",
+                        "Japanese": "こんべこ",
+                        "English": "Hello peko"
+                    }
+                },
+                {
+                    "name": "こんべこ2   你好peko2",
+                    "path": "こんべこ2   你好peko2.mp3",
+                    "translation": {
+                        "Chinese": "你好peko2",
+                        "Japanese": "こんべこ2",
+                        "English": "Hello peko2"
+                    }
+                },
+                {
+                    "name": "ショコラメロンパンうまし   巧克力菠萝包好吃",
+                    "path": "ショコラメロンパンうまし   巧克力菠萝包好吃.mp3",
+                    "translation": {
+                        "Chinese": "巧克力菠萝包好吃",
+                        "Japanese": "ショコラメロンパンうまし",
+                        "English": "Chocolate pineapple buns are delicious"
+                    }
+                },
+                {
+                    "name": "そうだね   对吧",
+                    "path": "そうだね   对吧.mp3",
+                    "translation": {
+                        "Chinese": "对吧",
+                        "Japanese": "そうだね",
+                        "English": "Yes it is"
+                    }
+                },
+                {
+                    "name": "そうなだ 是这样啊",
+                    "path": "そうなだ 是这样啊.mp3",
+                    "translation": {
+                        "Chinese": "是这样啊",
+                        "Japanese": "そうなだ",
+                        "English": "Ah, that's it"
+                    }
+                },
+                {
+                    "name": "そうぺこでしょ？   是吗peko？",
+                    "path": "そうぺこでしょ？   是吗peko？.mp3",
+                    "translation": {
+                        "Chinese": "是吗peko？",
+                        "Japanese": "そうぺこでしょ？",
+                        "English": "Is it? peko"
+                    }
+                },
+                {
+                    "name": "そーゆーこと   就是这样",
+                    "path": "そーゆーこと   就是这样.mp3",
+                    "translation": {
+                        "Chinese": "就是这样",
+                        "Japanese": "そーゆーこと",
+                        "English": "That's it"
+                    }
+                },
+                {
+                    "name": "それはアルキメデスだね   那是阿基米德呢",
+                    "path": "それはアルキメデスだね   那是阿基米德呢.mp3",
+                    "translation": {
+                        "Chinese": "那是阿基米德呢",
+                        "Japanese": "それはアルキメデスだね",
+                        "English": "That's Archimedes"
+                    }
+                },
+                {
+                    "name": "それほんとぺこ？   那是真的吗peko？",
+                    "path": "それほんとぺこ？   那是真的吗peko？.mp3",
+                    "translation": {
+                        "Chinese": "那是真的吗peko？",
+                        "Japanese": "それほんとぺこ？",
+                        "English": "Is that true? peko"
+                    }
+                },
+                {
+                    "name": "そんなのってないぺこじゃん   没有那种事peko酱",
+                    "path": "そんなのってないぺこじゃん   没有那种事peko酱.mp3",
+                    "translation": {
+                        "Chinese": "没有那种事peko酱",
+                        "Japanese": "そんなのってないぺこじゃん",
+                        "English": "Nothing happened peko"
+                    }
+                },
+                {
+                    "name": "そんなばなな！！！   这怎么可能！！！",
+                    "path": "そんなばなな！！！   这怎么可能！！！.mp3",
+                    "translation": {
+                        "Chinese": "这怎么可能！！！",
+                        "Japanese": "そんなばなな！！！",
+                        "English": "That's impossible!!!"
+                    }
+                },
+                {
+                    "name": "ってわけよ！   也就是说！",
+                    "path": "ってわけよ！   也就是说！.mp3",
+                    "translation": {
+                        "Chinese": "也就是说！",
+                        "Japanese": "ってわけよ！",
+                        "English": "In other words"
+                    }
+                },
+                {
+                    "name": "ってわけよ！   也就是说！",
+                    "path": "ってわけよ！   也就是说！.mp3",
+                    "translation": {
+                        "Chinese": "也就是说！",
+                        "Japanese": "ってわけよ！",
+                        "English": "In other words"
+                    }
+                },
+                {
+                    "name": "なんでだよぉ！   为啥啊",
+                    "path": "なんでだよぉ！   为啥啊.mp3",
+                    "translation": {
+                        "Chinese": " 为啥啊",
+                        "Japanese": "なんでだよぉ！",
+                        "English": "Why?"
+                    }
+                },
+                {
+                    "name": "にーんじん   胡-萝卜 ",
+                    "path": "にーんじん   胡-萝卜 .mp3",
+                    "translation": {
+                        "Chinese": "胡-萝卜",
+                        "Japanese": "にーんじん",
+                        "English": "Carrot"
+                    }
+                },
+                {
+                    "name": "ってわけよ！   也就是说！",
+                    "path": "ってわけよ！   也就是说！.mp3",
+                    "translation": {
+                        "Chinese": "也就是说！",
+                        "Japanese": "ってわけよ！",
+                        "English": "In other words"
+                    }
+                },
+                {
+                    "name": "はい   是 ",
+                    "path": "はい   是 .mp3",
+                    "translation": {
+                        "Chinese": "是",
+                        "Japanese": "はい",
+                        "English": "Yes"
+                    }
+                },
+                {
+                    "name": "バカタレ   笨蛋",
+                    "path": "バカタレ   笨蛋.mp3",
+                    "translation": {
+                        "Chinese": "笨蛋",
+                        "Japanese": "バカタレ",
+                        "English": "idiot"
+                    }
+                },
+                {
+                    "name": "ま？   嘛？ ",
+                    "path": "ま？   嘛？ .mp3",
+                    "translation": {
+                        "Chinese": "嘛？",
+                        "Japanese": "ま？",
+                        "English": "Ma?"
+                    }
+                },
+                {
+                    "name": "やらやら　好啊好啊",
+                    "path": "やらやら　好啊好啊.mp3",
+                    "translation": {
+                        "Chinese": "好啊好啊",
+                        "Japanese": "やらやら",
+                        "English": "OK,OK"
+                    }
+                },
+                {
+                    "name": "鼻歌 ",
+                    "path": "鼻歌 .mp3",
+                    "translation": {
+                        "Chinese": "鼻歌",
+                        "Japanese": "鼻歌",
+                        "English": "Humming"
+                    }
+                },
+                {
+                    "name": "鼻歌2 ",
+                    "path": "鼻歌2 .mp3",
+                    "translation": {
+                        "Chinese": "鼻歌2",
+                        "Japanese": "鼻歌2",
+                        "English": "Humming2"
+                    }
+                },
+                {
+                    "name": "違うぺこ   不对peko",
+                    "path": "違うぺこ   不对peko .mp3",
+                    "translation": {
+                        "Chinese": "不对peko",
+                        "Japanese": "違うぺこ",
+                        "English": "That's not right peko"
+                    }
+                },
+                {
+                    "name": "最近どう？   近况如何？ ",
+                    "path": "最近どう？   近况如何？ .mp3",
+                    "translation": {
+                        "Chinese": "近况如何？",
+                        "Japanese": "最近どう？",
+                        "English": "How's it going?"
+                    }
+                }
+
 
             ]
         },
@@ -105,6 +422,15 @@
                         "Chinese": "对不起~",
                         "Japanese": "ごめんなさい~",
                         "English": "I'm sorry~"
+                    }
+                },
+                {
+                    "name": "がんばてね　加油",
+                    "path": "がんばてね　加油.mp3",
+                    "translation": {
+                        "Chinese": "加油",
+                        "Japanese": "がんばてね",
+                        "English": "Come on"
                     }
                 },
                 {
@@ -169,6 +495,14 @@
                         "Japanese": "アイドルなんです",
                         "English": "I'm an idol"
                     }
+                }, {
+                    "name": "お兄ちゃん　ぺこらちゃん　だめ欧尼酱 佩克拉的话 不行吗",
+                    "path": "お兄ちゃん　ぺこらちゃん　だめ欧尼酱 佩克拉的话 不行吗.mp3",
+                    "translation": {
+                        "Chinese": "欧尼酱 佩克拉的话 不行吗",
+                        "Japanese": "お兄ちゃん　ぺこらちゃん",
+                        "English": "Onichan, Pekora-chan ,dame?"
+                    }
                 },
 
                 {
@@ -188,6 +522,15 @@
                         "Chinese": "明显不一样好吧",
                         "Japanese": "違うぺこでしょうって明らかに",
                         "English": "Obviously they are different-peko!"
+                    }
+                },
+                {
+                    "name": "ぺこらみつけた佩克拉找到你了",
+                    "path": "ぺこらみつけた佩克拉找到你了.mp3",
+                    "translation": {
+                        "Chinese": "佩克拉找到你了",
+                        "Japanese": "ぺこらみつけた",
+                        "English": "Pekora found you"
                     }
                 }
             ]
@@ -254,6 +597,15 @@
                     }
                 },
                 {
+                    "name": "おやしみ　晚安",
+                    "path": "おやしみ　晚安.mp3",
+                    "translation": {
+                        "Chinese": "晚安",
+                        "Japanese": "おやしみ",
+                        "English": "Good night"
+                    }
+                },
+                {
                     "name": "阿里嘎多peko",
                     "path": "阿里嘎多peko.mp3",
                     "translation": {
@@ -314,6 +666,15 @@
                         "Chinese": "哼~",
                         "Japanese": "うん~",
                         "English": "Hmpf!"
+                    }
+                },
+                {
+                    "name": "啾",
+                    "path": "啾.mp3",
+                    "translation": {
+                        "Chinese": "啾",
+                        "Japanese": "キッス",
+                        "English": "Kiss"
                     }
                 },
                 {
@@ -477,6 +838,15 @@
                         "Japanese": "ニャーニャーニャーニャーニャーニャー",
                         "English": "Nya~ Nya~ Nya~ Nya~ Nya~ Nya~ Nya~ Nya~"
                     }
+                },
+                {
+                    "name": "ぺこの唸り声 PEKO羞耻叫声 ",
+                    "path": "ぺこの唸り声 PEKO羞耻叫声 .mp3",
+                    "translation": {
+                        "Chinese": "PEKO羞耻叫声",
+                        "Japanese": "ぺこの唸り声",
+                        "English": "Lament"
+                    }
                 }
             ]
         },
@@ -494,6 +864,15 @@
                         "Chinese": "恶心心",
                         "Japanese": "気持ち悪い",
                         "English": "Disgusting."
+                    }
+                },
+                {
+                    "name": "ウーウー きもいよ呜呜 好恶心",
+                    "path": "ウーウー きもいよ呜呜 好恶心.mp3",
+                    "translation": {
+                        "Chinese": "呜呜 好恶心",
+                        "Japanese": "ウーウー きもいよ",
+                        "English": "Wuwu, disgusting."
                     }
                 },
                 {
