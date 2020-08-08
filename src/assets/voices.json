@@ -514,6 +514,15 @@
                         "Japanese": "ぺこらみつけた",
                         "English": "Pekora found you"
                     }
+                },
+                {
+                    "name": "It's me Pekora!",
+                    "path": "It's me Pekora!.mp3",
+                    "translation": {
+                        "Chinese": "是我佩克拉",
+                        "Japanese": "it's me ぺこーら",
+                        "English": "It's me Pekora!"
+                    }
                 }
             ]
         },
