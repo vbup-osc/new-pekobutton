@@ -50,6 +50,11 @@ export default {
         color: "primary"
       },
       {
+        name: "樱按钮/みこボタン",
+        href: "https://sakuramiko.org/",
+        color: "miko_red"
+      },
+      {
         name: "夸按钮/あくあボタン",
         href: "https://aquaminato.moe/",
         color: "purple"
