@@ -428,8 +428,6 @@ export default {
             });
             this.live_data = lives;
             this.live_data_loading = false;
-            window.console.log(this.live_data);
-            window.console.log(this.youtubeData);
       })
   },
   methods: {
