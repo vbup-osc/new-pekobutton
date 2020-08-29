@@ -201,6 +201,9 @@
         >{{$t("streaming")}}</div>
         <!-- 正在直播列表 -->
         <div class="liveinfo">
+          <p  :class="{dark_infotext:$root.dark}"
+          style="
+              letter-spacing: 0.02em;margin-top:40px;margin-left:30px" v-if="streaming==null">{{$t("noStreaming")}}</p>
           <div
             v-for="(streaming,index3) in live_data"
             :key="index3"
@@ -241,6 +244,9 @@
         >{{$t("upcoming")}}</div>
         <!-- 即将直播的列表 -->
         <div class="liveinfo">
+           <p  :class="{dark_infotext:$root.dark}"
+          style="
+              letter-spacing: 0.02em;margin-top:40px;margin-left:30px" v-if="streaming==null">{{$t("noStreaming")}}</p>
           <div
             v-for="(upcoming,index2) in live_data"
             :key="index2"
@@ -350,7 +356,7 @@
             color="secondary"
             v-for="(voice,index1) in group.voicelist"
             :key="index1"
-            @click="play(voice)"
+            @click="play($event,voice)"
           >
             <div>{{voice.translation.Chinese}}</div>
           </s-btn>
@@ -360,7 +366,7 @@
             color="secondary"
             v-for="(voice,index2) in group.voicelist"
             :key="index2"
-            @click="play(voice)"
+            @click="play($event,voice)"
           >
             <div>{{voice.translation.Japanese}}</div>
           </s-btn>
@@ -370,7 +376,7 @@
             color="secondary"
             v-for="(voice,index2) in group.voicelist"
             :key="index2"
-            @click="play(voice)"
+            @click="play($event,voice)"
           >
             <div>{{voice.translation.English}}</div>
           </s-btn>
@@ -399,6 +405,9 @@ export default {
     live_data_loading:true,
     youtubeData:{channels: null}
   }),
+  computed:{
+
+  },
   created() {
     //window.console.log(this.voices); //装载语音包path
     const axios = require("axios");
@@ -431,31 +440,64 @@ export default {
       })
   },
   methods: {
-    play(item) {
+    async play(event,item) {
       if (this.orderplaymode) {
         //判断序列播放
         this.orderlist.push(item);
         //window.console.log(this.orderlist);
       }
+      var target=event.currentTarget
       let audio = new Audio();
       audio.preload = true;
       audio.src = "voices/" + item.path;
       this.voice = item;
-      audio.volume = this.volume / 100;
-      audio.play();
+      var node=document.createElement("a");
+      node.classList.add("processing");
+      audio.load();
+      var time;
+      audio.oncanplay=()=>{
+        time=audio.duration;
+        node.style.animation="playing "+time+"s linear"
+        target.appendChild(node);
+        audio.play();
+      }  
+      audio.onended =()=>{
+        var childs=target.childNodes;
+        target.removeChild(childs[1]);//回收
+      };
     },
     playOnly(item) {
+      var target=event.currentTarget
       let audio = new Audio();
       audio.src = "voices/" + item.path;
       audio.preload = true;
       this.voice = item;
-      audio.play();
+      var node=document.createElement("a");
+      node.classList.add("processing");
+      audio.load();
+      var time;
+      audio.oncanplay=()=>{
+        time=audio.duration;
+        node.style.animation="playing "+time+"s linear"
+        target.appendChild(node);
+        audio.play();
+      }  
     },
     playSpecial() {
+      var target=event.currentTarget
       let audio = new Audio();
       audio.src = "voices/私货.mp3";
       audio.preload = true;
-      audio.play();
+      var node=document.createElement("a");
+      node.classList.add("processing");
+      audio.load();
+      var time;
+      audio.oncanplay=()=>{
+        time=audio.duration;
+        node.style.animation="playing "+time+"s linear"
+        target.appendChild(node);
+        audio.play();
+      }  
     },
     deletelist(i) {
       //删除序列中的一个值
@@ -529,7 +571,7 @@ body {
   -ms-perspective: 1000;
   perspective: 1000;
 }
-.btn div {
+.btn div{
   transition: 0.5s;
   text-align: center;
   padding-left: 11px;
@@ -592,7 +634,7 @@ body {
   overflow: visible !important;
 }
 .topdiv {
-  padding: 5px;
+  
   overflow: visible;
   column-gap: 0px;
   column-rule: 10px;
@@ -794,6 +836,7 @@ input[type="checkbox"]:checked:active + span::after {
     )
   );
 }
+
 .goto {
   padding: 10px;
   position: absolute;
@@ -890,4 +933,23 @@ input[type="checkbox"]:checked:active + span::after {
 .dialog-scale-leave-to {
   transform: scale3d(0,0,0);;
 }
+.processing{
+  position: absolute;
+  
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  animation: playing 3s linear;
+}
+@keyframes playing{
+  from {width: 0%;background-color: rgba(255, 255, 255, 0.575);}
+  to {width: 100%;background-color: rgba(0, 0, 0, 0);}
+}
+@-webkit-keyframes playing{
+  from {width: 0%;}
+  to {width: 100%;}
+}
+
 </style>

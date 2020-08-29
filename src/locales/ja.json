@@ -38,5 +38,6 @@
     "newversion": "A brand new version is on the way",
     "youtubesubs": "YouTube Channel(beta)",
     "upcoming": "開始しようとしています",
-    "streaming": "生放送"
+    "streaming": "生放送",
+    "noStreaming": ":( データなし"
 }

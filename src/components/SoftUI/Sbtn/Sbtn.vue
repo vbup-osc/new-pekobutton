@@ -22,8 +22,8 @@ export default {
       window.document.documentElement.setAttribute("color",this.color);
     },
     methods:{
-      handleClick(){
-        this.$emit('click', );//去除native
+      handleClick(evt) {
+        this.$emit('click', evt);
       }
     }
 }

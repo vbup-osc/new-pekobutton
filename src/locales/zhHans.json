@@ -39,5 +39,6 @@
     "newversion": "一个全新新版本开发中",
     "youtubesubs": "最新YouTube数据(beta)",
     "upcoming": "即将直播",
-    "streaming": "正在直播"
+    "streaming": "正在直播",
+    "noStreaming": ":( 暂无"
 }

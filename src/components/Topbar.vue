@@ -1,6 +1,6 @@
 <template>
   <div class="topbar" :class="{dark_topbar:$root.dark}">
-    <button class="languagebtn ripple" @mouseenter="showlangmenu=true" >
+    <button class="languagebtn ripple" @click="showlangmenu=true" >
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
         <path
           fill="white"
@@ -13,7 +13,7 @@
     </button>
     <p alt="peko按钮">{{$t("title")}}</p>
     <transition name="langmenu-scale">
-    <div v-show="showlangmenu" class="langmenu" :class="{dark:$root.dark}" @mouseleave="showlangmenu=false">
+    <div v-show="showlangmenu" class="langmenu" :class="{dark:$root.dark}" @click="showlangmenu=false">
           <button class="menubtn" :class="{dark_text:$root.dark}" v-for="(lang,index) in langs" :key="index" @click="ChangeLang(lang.src)"><div>{{lang.title}}</div></button>
     </div>
     </transition>
