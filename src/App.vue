@@ -105,7 +105,7 @@ export default {
       this.$store.commit("change_dark_mode");
       this.$root.dark = this.$store.state.dark_mode;
 
-      window.console.log(this.$root.dark);
+      //window.console.log(this.$root.dark);
     }
 
     window.onbeforeinstallprompt = e => {

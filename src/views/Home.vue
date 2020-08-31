@@ -201,9 +201,9 @@
         >{{$t("streaming")}}</div>
         <!-- 正在直播列表 -->
         <div class="liveinfo">
-          <p  :class="{dark_infotext:$root.dark}"
+          <!-- <p  :class="{dark_infotext:$root.dark}"
           style="
-              letter-spacing: 0.02em;margin-top:40px;margin-left:30px" v-if="streaming==null">{{$t("noStreaming")}}</p>
+              letter-spacing: 0.02em;margin-top:40px;margin-left:30px" >{{$t("noStreaming")}}{{live_data}}</p> -->
           <div
             v-for="(streaming,index3) in live_data"
             :key="index3"
@@ -244,9 +244,9 @@
         >{{$t("upcoming")}}</div>
         <!-- 即将直播的列表 -->
         <div class="liveinfo">
-           <p  :class="{dark_infotext:$root.dark}"
+           <!-- <p  :class="{dark_infotext:$root.dark}"
           style="
-              letter-spacing: 0.02em;margin-top:40px;margin-left:30px" v-if="streaming==null">{{$t("noStreaming")}}</p>
+              letter-spacing: 0.02em;margin-top:40px;margin-left:30px" v-if="streaming==null">{{$t("noStreaming")}}</p> -->
           <div
             v-for="(upcoming,index2) in live_data"
             :key="index2"
@@ -403,7 +403,9 @@ export default {
     volume: 100,
     live_data: {},
     live_data_loading:true,
-    youtubeData:{channels: null}
+    youtubeData:{channels: null},
+    colors:["rgba(23, 116, 255, 0.575)","rgba(233, 85, 0, 0.555)"],
+    colorC:0
   }),
   computed:{
 
@@ -457,7 +459,9 @@ export default {
       var time;
       audio.oncanplay=()=>{
         time=audio.duration;
-        node.style.animation="playing "+time+"s linear"
+        node.style.backgroundColor=this.colors[this.colorC];
+        this.colorChange();
+        node.style.animation="playing "+time+"s linear forwards";
         target.appendChild(node);
         audio.play();
       }  
@@ -478,7 +482,9 @@ export default {
       var time;
       audio.oncanplay=()=>{
         time=audio.duration;
-        node.style.animation="playing "+time+"s linear"
+        node.style.backgroundColor=this.colors[this.colorC];
+        this.colorChange();
+        node.style.animation="playing "+time+"s linear forwards";
         target.appendChild(node);
         audio.play();
       }  
@@ -494,7 +500,9 @@ export default {
       var time;
       audio.oncanplay=()=>{
         time=audio.duration;
-        node.style.animation="playing "+time+"s linear"
+        node.style.backgroundColor=this.colors[this.colorC];
+        this.colorChange();
+        node.style.animation="playing "+time+"s linear forwards";
         target.appendChild(node);
         audio.play();
       }  
@@ -540,11 +548,18 @@ export default {
     stopplay() {
       audio.pause();
       i = 0;
+    },
+    colorChange(){
+      if(this.colorC<this.colors.length-1){
+        this.colorC++;
+      }else{
+        this.colorC=0;
+      }
     }
   },
   watch: {
     orderplaymode: function() {
-      window.console.log(this.orderplaymode);
+      //window.console.log(this.orderplaymode);
       //启动序列播放
       if (this.orderplaymode) {
         this.helpdialog = true;
@@ -935,21 +950,20 @@ input[type="checkbox"]:checked:active + span::after {
 }
 .processing{
   position: absolute;
-  
   left: 0px;
   top: 0px;
-  background-color: rgba(0, 0, 0, 0);
   width: 100%;
   height: 100%;
+  background-color: rgba(233, 85, 0, 0.555);
   animation: playing 3s linear;
 }
 @keyframes playing{
-  from {width: 0%;background-color: rgba(255, 255, 255, 0.575);}
+  from {width: 0%;}
   to {width: 100%;background-color: rgba(0, 0, 0, 0);}
 }
 @-webkit-keyframes playing{
   from {width: 0%;}
-  to {width: 100%;}
+  to {width: 100%;background-color: rgba(0, 0, 0, 0);}
 }
 
 </style>
