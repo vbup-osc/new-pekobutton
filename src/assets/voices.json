@@ -3,7 +3,7 @@
             "name": "hahaha",
             "translation": {
                 "Chinese": "各种哈↑哈↑哈↑",
-                "Japanese": "いろいろな「ははは」",
+                "Japanese": "は↑は↑は↑",
                 "English": "Hahaha"
             },
             "voicelist": [{
@@ -67,7 +67,7 @@
             "name": "Pekora",
             "translation": {
                 "Chinese": "？佩克拉钦定语音",
-                "Japanese": "ぺこらのために",
+                "Japanese": "ぺこらコレクション",
                 "English": "Collection for Pekora"
             },
             "voicelist": [{
@@ -102,7 +102,7 @@
                     "path": "うん 嗯嗯.mp3",
                     "translation": {
                         "Chinese": "嗯嗯",
-                        "Japanese": "うん",
+                        "Japanese": "うんうん",
                         "English": "En En"
                     }
                 },
@@ -111,7 +111,7 @@
                     "path": "え～ 唉~.mp3",
                     "translation": {
                         "Chinese": "唉~",
-                        "Japanese": "え～",
+                        "Japanese": "へ～",
                         "English": "Ennnn~"
                     }
                 },
@@ -147,7 +147,7 @@
                     "path": "こんにちは   你好.mp3",
                     "translation": {
                         "Chinese": "你好",
-                        "Japanese": "こんにちは",
+                        "Japanese": "ｺｰﾆﾁﾊｰ",
                         "English": "Hello"
                     }
                 },
@@ -156,7 +156,7 @@
                     "path": "こんべこ   你好peko.mp3",
                     "translation": {
                         "Chinese": "你好peko",
-                        "Japanese": "こんべこ",
+                        "Japanese": "こんぺこ",
                         "English": "Hello peko"
                     }
                 },
@@ -165,7 +165,7 @@
                     "path": "こんべこ2   你好peko2.mp3",
                     "translation": {
                         "Chinese": "你好peko2",
-                        "Japanese": "こんべこ2",
+                        "Japanese": "こんぺこ2",
                         "English": "Hello peko2"
                     }
                 },
@@ -192,7 +192,7 @@
                     "path": "そうなだ 是这样啊.mp3",
                     "translation": {
                         "Chinese": "是这样啊",
-                        "Japanese": "そうなだ",
+                        "Japanese": "そうなんだ",
                         "English": "Ah, that's it"
                     }
                 },
@@ -309,7 +309,7 @@
                     "path": "やらやら　好啊好啊.mp3",
                     "translation": {
                         "Chinese": "好啊好啊",
-                        "Japanese": "やらやら",
+                        "Japanese": "やろやろ",
                         "English": "OK,OK"
                     }
                 },
@@ -376,7 +376,7 @@
             "name": "others",
             "translation": {
                 "Chinese": "通用",
-                "Japanese": "一般",
+                "Japanese": "いろいろ",
                 "English": "General"
             },
             "voicelist": [{
@@ -511,7 +511,7 @@
                     "path": "ぺこらみつけた佩克拉找到你了.mp3",
                     "translation": {
                         "Chinese": "佩克拉找到你了",
-                        "Japanese": "ぺこらみつけた",
+                        "Japanese": "ぺこらみぃつけた",
                         "English": "Pekora found you"
                     }
                 },
@@ -565,7 +565,7 @@
                     "path": "欢迎来到兔田大家族.mp3",
                     "translation": {
                         "Chinese": "欢迎来到兔田大家族",
-                        "Japanese": "兎田ファミリへようこそ",
+                        "Japanese": "兎田ファミリアへようこそ",
                         "English": "Welcome to the Usada Family"
                     }
                 },
@@ -655,7 +655,7 @@
                     "path": "哼~.mp3",
                     "translation": {
                         "Chinese": "哼~",
-                        "Japanese": "うん~",
+                        "Japanese": "ﾌﾝｯ!",
                         "English": "Hmpf!"
                     }
                 },
@@ -736,7 +736,7 @@
                     "path": "波纹呼吸.mp3",
                     "translation": {
                         "Chinese": "波纹呼吸",
-                        "Japanese": "呼吸",
+                        "Japanese": "過呼吸",
                         "English": "Hamon breathing"
                     }
                 },
@@ -898,7 +898,7 @@
                     "path": "放学来操场后面我削不死你.mp3",
                     "translation": {
                         "Chinese": "放学来操场后面我削不死你",
-                        "Japanese": "お前後で体育館の裏に来いよ。ボコボコにしてやっからな。",
+                        "Japanese": "お前後で体育館の裏に来いよ。ボコボコにしてやっからな",
                         "English": "Come to gym afterward, I'm going to kick your @$$."
                     }
                 },
@@ -925,7 +925,7 @@
                     "path": "喜欢佩克拉的话就推啊.mp3",
                     "translation": {
                         "Chinese": "喜欢佩克拉的话就推啊",
-                        "Japanese": "ぺこーらを好きなら推せよずっとと",
+                        "Japanese": "ぺこーらを好きなら推せよずっと、と",
                         "English": "If you like Pekora, push it!"
                     }
                 },
@@ -943,7 +943,7 @@
                     "path": "佩克拉喜欢在现实中看见别人流泪的样子.mp3",
                     "translation": {
                         "Chinese": "佩克拉喜欢在现实中看见别人流泪的样子",
-                        "Japanese": "あとはぺこらはリアルでね、涙を流してる姿をジッと見るが好きなの。",
+                        "Japanese": "あとはぺこらはリアルでね、涙を流してる姿をジッと見るが好きなの",
                         "English": "In real life, Pekora loves watching their crying faces."
                     }
                 },
@@ -1015,7 +1015,7 @@
                     "path": "尖叫.mp3",
                     "translation": {
                         "Chinese": "尖叫（音量注意）",
-                        "Japanese": "悲鳴（ボリュームに注意）",
+                        "Japanese": "悲鳴（音量注意）",
                         "English": "Scream (Volume Warning)"
                     }
                 },
@@ -1024,7 +1024,7 @@
                     "path": "你在干什么peko（音量注意）.mp3",
                     "translation": {
                         "Chinese": "你在干什么peko（音量注意）",
-                        "Japanese": "何するぺこなの（ボリュームに注意）",
+                        "Japanese": "何するぺこなの（音量注意）",
                         "English": "What are you doing-peko? (Volume Warning)"
                     }
                 },
