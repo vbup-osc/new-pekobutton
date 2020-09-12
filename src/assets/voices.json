@@ -523,6 +523,15 @@
                         "Japanese": "it's me ぺこーら",
                         "English": "It's me Pekora!"
                     }
+                },
+                {
+                    "name": "不准碰偶像 笨蛋么",
+                    "path": "不准碰偶像 笨蛋么.mp3",
+                    "translation": {
+                        "Chinese": "不准碰偶像 笨蛋么",
+                        "Japanese": "アイドル ふれゆで　馬鹿が！",
+                        "English": "Don't touch idol! Baka ga!"
+                    }
                 }
             ]
         },
