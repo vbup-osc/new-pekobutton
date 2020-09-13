@@ -1,26 +1,27 @@
 # new-Peko-button
 
-
 原项目：<https://github.com/Coceki/peko-button>
 
 注意：该项目刚刚启动，还未完善，请大佬轻喷，我日语本当🔨(顺便恰日语翻译)，有错误请指出，素材投稿请参考 如何参与开发，Bug与建议请直接发issue  
 
 新特性：  
-* 新拟态UI设计  
+* 新拟态UI设计
 * 直播预告（还没解决日访问限制）
 
 赶工作品，有很多UI细节bug  
 代码很乱，UI框架封装考完试再搞  
 
-技术交流QQ群：1082177867（为了防止小鬼，群问题为 原项目 第一次commit的时间，格式为yyyy.mm.dd,有0不需要补0） ~~（什么都不会进来吹吹水也行）~~  
+技术交流QQ群：1082177867（为了防止小鬼，群问题为 原项目 第一次commit的时间，格式为yyyy.mm.dd,有0不需要补0） 
+~~（什么都不会进来吹吹水也行）~~  
+
 ## 项目说明
-     
-音源来自VTB兔田佩克拉  
-该项目为爱好者自行创建，与Hololive官方无关，所有二次创作均需遵守[Hololive二创规范](https://www.hololive.tv/terms)  
-相关链接：
-* 兔田佩克拉Twitter：<https://twitter.com/usadapekora> 
-* Youtube：<https://www.youtube.com/channel/UC1DCedRgGHBdm81E1llLhOQ>  
-* Bilibili：<https://space.bilibili.com/443305053>
+音源来自VTuber 兎田ぺこら
+该项目为爱好者自行创建，与Hololive官方无关，所有二次创作均需遵守[Hololive二创规范](https://www.hololive.tv/terms)
+兎田ぺこら相关链接/Links：
+
+* [兎田ぺこらTwitter](https://twitter.com/usadapekora)
+* [Youtube](https://www.youtube.com/channel/UC1DCedRgGHBdm81E1llLhOQ)
+* [Bilibili](https://space.bilibili.com/443305053)
 
 同样欢迎同好拿去创建新的站点（~~比如先辈按钮什么的~~），记得注明原作者即可
 
@@ -43,11 +44,11 @@
 * 用VScode或其他工具进行修改后发送一个Pull request请求即可
 
 所有的音源在/src/assets/voices.json中有定义  
-音源文件在/public/voices中（建议使用mp3格式）   
+音源文件在/public/voices中（建议使用mp3格式)
 
 ## 贡献者名单
 代码：  
-* [Coceki](https://space.bilibili.com/11229533)  
+* [Coceki](https://space.bilibili.com/11229533)
 
 日语翻译
 * [HayatoTenryuu](https://github.com/HayatoTenryuu)
