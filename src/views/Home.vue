@@ -136,7 +136,11 @@
       </div>
     </transition>
     <div class="titlediv">
-      <p class="title" :class="{dark_text:$root.dark}">{{$t("title")}}</p>
+      <p class="title" :class="{dark_text:$root.dark}" @click="easterEgg()" >{{$t("title")}}<br>
+      <s-btn v-show="easteregg" color="secondary" @click="playEasteregg()">
+          <div>????????.sstv robot36</div>
+        </s-btn></p>
+      
     </div>
     <div class="topdiv topdivO">
       <div class="card cardM" :class="{dark:$root.dark}">
@@ -405,7 +409,9 @@ export default {
     live_data_loading:true,
     youtubeData:{channels: null},
     colors:["rgba(23, 116, 255, 0.575)","rgba(233, 85, 0, 0.555)"],
-    colorC:0
+    colorC:0,
+    easteregg:false,
+    ec:0
   }),
   computed:{
 
@@ -555,6 +561,30 @@ export default {
       }else{
         this.colorC=0;
       }
+    },
+    easterEgg(){
+      this.ec++;
+      if(this.ec==5){
+        this.easteregg=true;
+      }
+    },
+    playEasteregg(){
+      var target=event.currentTarget
+      let audio = new Audio();
+      audio.src = "voices/easteregg.mp3";
+      audio.preload = true;
+      var node=document.createElement("a");
+      node.classList.add("processing");
+      audio.load();
+      var time;
+      audio.oncanplay=()=>{
+        time=audio.duration;
+        node.style.backgroundColor=this.colors[this.colorC];
+        this.colorChange();
+        node.style.animation="playing "+time+"s linear forwards";
+        target.appendChild(node);
+        audio.play();
+      } 
     }
   },
   watch: {
