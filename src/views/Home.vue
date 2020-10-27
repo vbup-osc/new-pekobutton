@@ -325,6 +325,13 @@
           </svg>
           <a style="margin-left:30px">@usadapekora</a>
         </s-btn> -->
+        <!-- miko和peko贴贴links -->
+        <s-btn
+          v-for="(link,index) in ttlinks"
+          :key="index"
+          :color="link.color"
+          @click="See(link.href)"
+        >{{link.name}}</s-btn>
       </div>
       
     </div>
@@ -411,7 +418,19 @@ export default {
     colors:["rgba(23, 116, 255, 0.575)","rgba(233, 85, 0, 0.555)"],
     colorC:0,
     easteregg:false,
-    ec:0
+    ec:0,
+    ttlinks: [
+      {
+        name: "樱按钮/みこボタン",
+        href: "https://sakuramiko.org/",
+        color: "miko_red"
+      },
+      {
+        name: "VTuber按钮合集",
+        href: "https://vtbbtn.org/",
+        color: "primary"
+      }
+    ]
   }),
   computed:{
 
