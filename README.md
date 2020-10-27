@@ -16,7 +16,8 @@
 
 ## 项目说明
 音源来自VTuber 兎田ぺこら
-该项目为爱好者自行创建，与Hololive官方无关，所有二次创作均需遵守[Hololive二创规范](https://www.hololive.tv/terms)
+该项目为爱好者自行创建，与Hololive官方无关
+<!-- 所有二次创作均需遵守[Hololive二创规范](https://www.hololive.tv/terms) -->
 兎田ぺこら相关链接/Links：
 
 * [兎田ぺこらTwitter](https://twitter.com/usadapekora)

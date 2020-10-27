@@ -301,7 +301,7 @@
           {{$t("additionalhelp")}}
           <br />
         </div>
-        <s-btn color="red" @click="See('https://www.youtube.com/channel/UC1DCedRgGHBdm81E1llLhOQ')">
+        <!-- <s-btn color="red" @click="See('https://www.youtube.com/channel/UC1DCedRgGHBdm81E1llLhOQ')">
           <svg
             style="width:24px;height:24px;position:absolute;left:10px;bottom:50%;transform:translate3d(0,50%,0)"
             viewBox="0 0 24 24"
@@ -324,7 +324,7 @@
             />
           </svg>
           <a style="margin-left:30px">@usadapekora</a>
-        </s-btn>
+        </s-btn> -->
       </div>
       
     </div>
