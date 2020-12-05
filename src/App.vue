@@ -26,6 +26,12 @@
         @click="See(link.href)"
       >{{link.name}}</s-btn>
       <p class="footertext" :class="{dark_infotext:$root.dark}">{{$t("developerinfo")}}</p>
+      <p class="footertext" :class="{dark_infotext:$root.dark}">
+        Powered by
+        <a href="https://www.vercel.com/?utm_source=vbuposc&utm_campaign=oss" target="_blank" rel="noreferrer">
+          <img v-bind:src="vercel_logo" alt="vercel" height="24px"/>
+        </a>
+      </p>
     </div>
   </div>
 </template>
@@ -87,6 +93,12 @@ export default {
     ]
     //
   }),
+  computed: {
+    vercel_logo() {
+      const mode = this.$root.dark ? 'dark' : 'light';
+      return '/img/vercel/' + mode + '.svg';
+    }
+  },
   created() {
     if (!!window.ActiveXObject || "ActiveXObject" in window) {
       //不会还有人在用IE吧，不会吧不会吧

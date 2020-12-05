@@ -65,3 +65,8 @@
 * [Richard_Al](https://space.bilibili.com/34401008)
 * [山に住むの良い妖怪](https://space.bilibili.com/299970757)
 * [Qradn](https://space.bilibili.com/18725633)
+
+## 特别感谢
+#### 本项目由 [Vercel](https://vercel.com/) 强力驱动。
+
+[![Vercel Logo](https://cdn.jsdelivr.net/gh/paizi/vue-test/vercel.svg)](https://vercel.com)
